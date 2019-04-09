@@ -1,0 +1,17 @@
+.btn {
+    float: right !important;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center-block{
+    text-align: justify;
+    text-align-last: center;
+    padding: 10px;
+}
+#roundCounter{
+    text-align: center;
+}

@@ -3,7 +3,7 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-    <persistence-unit name="warsztat6krkw01">
+    <persistence-unit name="BettingApp">
         <properties>
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/BettingApp" />
@@ -11,15 +11,13 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
             <property name="javax.persistence.jdbc.password" value="coderslab" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.schema-generation.database.action"
-                      value="none"/>
-
+                      value="drop-and-create"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect" />
             <property name="hibernate.connection.characterEncoding" value="utf8" />
-
             <property name="javax.persistence.sql-load-script-source"
                       value="META-INF/sql/data.sql" />
             <property name="javax.persistence.validation.mode" value="NONE" />
