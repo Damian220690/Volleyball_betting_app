@@ -16,7 +16,8 @@
         <ul class="nav navbar-nav m4-auto">
             <li class="active"><a href="#">Home</a></li>
         </ul>
-        <button class="btn btn-danger navbar-btn ">Rejestracja / Logowanie</button>
+        <button class="btn btn-danger navbar-btn" onclick="location.href='/register'">Rejestracja</button>
+        <button class="btn btn-danger navbar-btn" onclick="location.href='/login'">Zaloguj</button>
     </div>
 </nav>
 <div class="container">

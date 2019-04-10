@@ -12,6 +12,17 @@
 </head>
 <body>
 <div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">PrivBet</a>
+            </div>
+            <ul class="nav navbar-nav m4-auto">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <button class="btn btn-danger navbar-btn ">Rejestracja / Logowanie</button>
+        </div>
+    </nav>
     <h2>Harmonogram rozgrywek:</h2>
 <c:forEach var="matches" items="${matches}">
     <table class="table .table-sm" id="schedule">

@@ -22,7 +22,7 @@ public class HomeController {
         return "home/home";
     }
 
-    @GetMapping("/t")
+    @GetMapping("/schedule")
     public String getMatchesSchedule(Model model){
         MatchesSchedule matchesSchedule = new MatchesSchedule();
         List<VolleyballTeam> teams = volleyballTeamRepository.findAll();

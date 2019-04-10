@@ -17,4 +17,6 @@ public class MatchesDetailsController {
         model.addAttribute("volleyballTeams", volleyballTeamRepository.findAll());
         return "pagesAfterLogin/teamsTable";
     }
+
+
 }

@@ -1,9 +1,9 @@
 package pl.coderslab.model.entities;
 
-import pl.coderslab.model.POJO.Gender;
+import org.mindrot.jbcrypt.BCrypt;
+import pl.coderslab.model.POJO.UserDto;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "users")
@@ -13,15 +13,25 @@ public class User {
     private long id;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String email;
-    private Date dateOfBirth;
-    private Gender gender;
+    private String gender;
+    @Column(unique = true)
     private String userName;
-    private String password;
-
+    private String hashedPassword;
 
     public User() {
     }
+
+    public User(UserDto userDto) {
+        this.firstName = userDto.getFirstName();
+        this.lastName = userDto.getLastName();
+        this.email = userDto.getEmail();
+        this.gender = userDto.getGender();
+        this.userName = userDto.getUserName();
+        setPassword(userDto.getPassword());
+    }
+
 
     public long getId() {
         return id;
@@ -55,20 +65,21 @@ public class User {
         this.email = email;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public Gender getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public boolean isPasswordCorrect(String candidate) {
+        return BCrypt.checkpw(candidate, this.hashedPassword);
+    }
+
+    public void setPassword(String password) {
+        this.hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
     public String getUserName() {
@@ -77,13 +88,5 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
