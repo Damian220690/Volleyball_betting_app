@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
 <body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -16,12 +16,12 @@
         <ul class="nav navbar-nav m4-auto">
             <li class="active"><a href="#">Home</a></li>
         </ul>
-        <button class="btn btn-danger navbar-btn" onclick="location.href='/register'">Rejestracja</button>
-        <button class="btn btn-danger navbar-btn" onclick="location.href='/login'">Zaloguj</button>
+        <button class="btn btn-danger navbar-btn" onclick="location.href='user/register'">Rejestracja</button>
+        <button class="btn btn-danger navbar-btn" onclick="location.href='user/login'">Zaloguj</button>
     </div>
 </nav>
 <div class="container">
-    <img class="rounded mx-auto d-block" id="logo" src="/static/images/logo.png">
+    <img class="rounded mx-auto d-block" id="logo" src="../static/images/logo.png">
     <div class="center-block">About betting</div>
 </div>
 

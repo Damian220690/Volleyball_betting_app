@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link href="static/css/loginStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/loginStyle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="login-box">

@@ -58,7 +58,7 @@
     <button type="submit" id="sendButton" class="btn btn-primary">Agree and Join</button>
 </form:form>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="static/js/checkPasswords.js"></script>
+<script src="../static/js/checkPasswords.js"></script>
 </body>
 
 </html>

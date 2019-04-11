@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.model.POJO.Gender;
 import pl.coderslab.model.POJO.UserDto;
 import pl.coderslab.model.entities.User;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -37,7 +39,6 @@ public class UserController {
     @PostMapping("/register")
     public String processForm(@ModelAttribute("user") @Valid UserDto user, BindingResult br, Model model ){
         if(br.hasErrors()){
-            System.out.println("Mamy błędy");
             model.addAttribute("user", user);
             return "user/registrationForm";
         }
@@ -72,6 +73,14 @@ public class UserController {
         s.setAttribute("loggedInUser", user);
 
         return "redirect:/schedule";
+    }
+
+
+    @GetMapping("/logout")
+    public String logout(HttpSession s){
+        s.removeAttribute("loggedInUser");
+
+        return "redirect:login";
     }
 
 }
