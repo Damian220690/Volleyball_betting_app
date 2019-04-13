@@ -46,7 +46,7 @@ public class UserController {
 
         this.userRepository.save(u);
 
-        return "redirect:/";
+        return "redirect:/privBet";
     }
 
     @GetMapping("/login")
@@ -72,7 +72,7 @@ public class UserController {
 
         s.setAttribute("loggedInUser", user);
 
-        return "redirect:/schedule";
+        return "redirect:/teamsTable";
     }
 
 

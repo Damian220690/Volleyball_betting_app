@@ -14,13 +14,13 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">PrivBet</a>
+                <a class="navbar-brand" href="/privBet">PrivBet</a>
             </div>
             <ul class="nav navbar-nav m4-auto">
                 <li class="active"><a href="">Moje konto</a></li>
+                <li class="active"><a href="schedule">Harmonogram meczy</a></li>
             </ul>
-            <button id="" btn
-            " class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
+            <button id=" btn" class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
         </div>
     </nav>
 </div>
@@ -49,12 +49,10 @@
                 </tr>
                 <tr class="t">
                     <td class="options">
-                        <div class="text-center">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-secondary">Left</button>
-                                <button type="button" class="btn btn-secondary">Right</button>
+                            <div id="betOptions">
+                                <label class="firstTeam"><input type="radio" name="toggle"><span>1</span></label>
+                                <label class="secondTeam"><input type="radio" name="toggle"><span>2</span></label>
                             </div>
-                        </div>
                     </td>
                 </tr>
                 </tbody>

@@ -15,10 +15,11 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">PrivBet</a>
+                <a class="navbar-brand" href="/privBet">PrivBet</a>
             </div>
             <ul class="nav navbar-nav m4-auto">
                 <li class="active"><a href="">Moje konto</a></li>
+                <li class="active"><a href="schedule">Harmonogram meczy</a></li>
             </ul>
             <button class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
         </div>
