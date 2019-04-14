@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import pl.coderslab.model.POJO.Player;
 import pl.coderslab.model.POJO.Round;
 import pl.coderslab.model.POJO.RoundManager;
 import pl.coderslab.repositories.VolleyballTeamRepository;
@@ -26,6 +28,11 @@ public class HomeController {
         RoundManager roundManager = new RoundManager();
         List<Round> rounds = roundManager.generateRounds(volleyballTeamRepository);
         model.addAttribute("rounds", rounds);
+
+        Player player = new Player();
+        String result = player.pointsIncrement();
+        model.addAttribute("result",result);
+
         return "pagesAfterLogin/liveMatchesList";
     }
 
