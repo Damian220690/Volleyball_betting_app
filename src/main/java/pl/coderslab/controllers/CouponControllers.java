@@ -5,11 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.coderslab.model.POJO.MatchesSchedule;
-import pl.coderslab.model.entities.VolleyballTeam;
+import pl.coderslab.model.POJO.Round;
+import pl.coderslab.model.POJO.RoundManager;
 import pl.coderslab.repositories.VolleyballTeamRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,16 +20,9 @@ public class CouponControllers {
 
     @GetMapping("/addCoupon")
     public String addCoupon(Model model){
-        MatchesSchedule matchesSchedule = new MatchesSchedule();
-        List<VolleyballTeam> teams = volleyballTeamRepository.findAll();
-        List<String> teamMembers = new ArrayList<>();
-        for(VolleyballTeam team : teams){
-            teamMembers.add(team.getTeamMembers());
-        }
-
-        List<String[]> matches = matchesSchedule.generateMatchesSchedule(teamMembers);
-        System.out.println("matches");
-        model.addAttribute("matches",matches);
+        RoundManager roundManager = new RoundManager();
+        List<Round> rounds = roundManager.generateRounds(volleyballTeamRepository);
+        model.addAttribute("rounds", rounds);
         return "/coupon/addCoupon";
     }
 }

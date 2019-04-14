@@ -1,7 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%! int numberOfRounds = 1; %>
-<%session.setAttribute("numberOfRounds", numberOfRounds);%>
 <html>
 <head>
     <title>PrivBet</title>
@@ -25,18 +23,18 @@
         </div>
     </nav>
     <h2>Harmonogram rozgrywek:</h2>
-    <c:forEach var="matches" items="${matches}">
+    <c:forEach var="rounds" items="${rounds}">
         <table class="table .table-sm" id="schedule">
 
             <thead>
-            <tr id="roundCounter">Runda <%=numberOfRounds++%>:</tr>
+            <tr id="roundCounter">Runda ${rounds.roundNumber}:</tr>
             <tr>
                 <th scope="col" class="text-center">drużyna</th>
                 <th scope="col" class="text-center">&nbsp</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="match" items="${matches}">
+            <c:forEach var="match" items="${rounds.match}">
                 <tr>
                     <td class="text-center">${match}</td>
                     <td class="text-center"><a>Szczegóły meczu</a></td>

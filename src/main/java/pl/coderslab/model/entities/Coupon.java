@@ -8,20 +8,13 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long couponsNumber;
-    private String match;
+    private String matches;
     private double deposit;
     private double possibleWin;
     @ManyToOne
     private User user;
 
     public Coupon() {
-    }
-
-    public Coupon(String match, double deposit, double possibleWin, User user) {
-        this.match = match;
-        this.deposit = deposit;
-        this.possibleWin = possibleWin;
-        this.user = user;
     }
 
     public long getCouponsNumber() {
@@ -32,13 +25,12 @@ public class Coupon {
         this.couponsNumber = couponsNumber;
     }
 
-
-    public String getMatch() {
-        return match;
+    public String getMatches() {
+        return matches;
     }
 
-    public void setMatch(String match) {
-        this.match = match;
+    public void setMatches(String matches) {
+        this.matches = matches;
     }
 
     public double getDeposit() {

@@ -40,6 +40,5 @@ public class MatchesSchedule {
 
         List<String[]> matches = Arrays.asList(rounds);
         return matches;
-
     }
 }

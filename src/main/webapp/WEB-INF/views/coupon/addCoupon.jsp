@@ -1,7 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%! int numberOfRounds = 1; %>
-<%session.setAttribute("numberOfRounds", numberOfRounds);%>
 <html>
 <head>
     <title>New coupon</title>
@@ -26,21 +24,18 @@
 </div>
 <div class="roundsDiv">
     <h2>Wybierz mecze:</h2>
-    <c:forEach var="matches" items="${matches}">
-        <h4 class="roundCounter"><b>Runda <%=numberOfRounds++%>
-        </b></h4>
+    <c:forEach var="rounds" items="${rounds}">
+        <h4 class="roundCounter"><b>Runda ${rounds.roundNumber}</b></h4>
         <div class="roundDiv">
             <table class="table .table-sm" id="schedule">
                 <thead>
-                </tr>
-                </tr>
                 <tr>
                     <th scope="col" class="text-center">drużyna</th>
                     <th scope="col" class="text-center">&nbsp</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="match" items="${matches}">
+                <c:forEach var="match" items="${rounds.match}">
                 <tr>
                     <td class="text-center">${match}</td>
                     <td class="text-center">
@@ -49,10 +44,10 @@
                 </tr>
                 <tr class="t">
                     <td class="options">
-                            <div id="betOptions">
-                                <label class="firstTeam"><input type="radio" name="toggle"><span>1</span></label>
-                                <label class="secondTeam"><input type="radio" name="toggle"><span>2</span></label>
-                            </div>
+                        <div id="betOptions">
+                            <label class="firstTeam"><input type="radio" name="toggle"><span>1</span></label>
+                            <label class="secondTeam"><input type="radio" name="toggle"><span>2</span></label>
+                        </div>
                     </td>
                 </tr>
                 </tbody>
@@ -60,7 +55,6 @@
             </table>
         </div>
     </c:forEach>
-
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

@@ -29,3 +29,4 @@ INSERT INTO volleyballTeams(placeInTable, numberOfMatches, teamMembers, mainPoin
 INSERT INTO volleyballTeams(placeInTable, numberOfMatches, teamMembers, mainPoints, winSets, lostSets) VALUES (15, 0, "Rafał Pietras / Michał Brzeziński", 0, 0, 0);
 
 INSERT INTO volleyballTeams(placeInTable, numberOfMatches, teamMembers, mainPoints, winSets, lostSets) VALUES (16, 0, "Wojciech Biały / Dominik Kaliszewski", 0, 0, 0);
+
