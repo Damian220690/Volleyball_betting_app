@@ -1,19 +1,11 @@
 $(function () {
 
-    // $.ajax({
-    //     url: "http://localhost:8080/schedule",
-    //     type: "GET",
-    //     dataType: "json",
-    // }).done(function () {
-    //     setInterval(function(){
-    //                 console.log("IIIIII");
-    //             }, 500)});
-    // });
+    setInterval(function () {
+        fetch("/api/schedule").then(function (response) {
+            return response.json();
+        }).then(function (response) {
+            $("tbody").children().children().next().text(response);
+        });
+    }, 1000);
+});
 
-
-    // $("#result")
-    // {
-    //     setInterval(function(){
-    //         // document.location.reload();
-    //         console.log("IIIIII");
-    //     }, 500)};
