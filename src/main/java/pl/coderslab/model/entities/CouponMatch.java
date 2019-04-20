@@ -9,6 +9,7 @@ public class CouponMatch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String volleyballMatch;
+    private double matchCourse;
 
     public long getId() {
         return id;
@@ -24,5 +25,13 @@ public class CouponMatch {
 
     public void setVolleyballMatch(String volleyballMatch) {
         this.volleyballMatch = volleyballMatch;
+    }
+
+    public double getMatchCourse() {
+        return matchCourse;
+    }
+
+    public void setMatchCourse(double matchCourse) {
+        this.matchCourse = matchCourse;
     }
 }

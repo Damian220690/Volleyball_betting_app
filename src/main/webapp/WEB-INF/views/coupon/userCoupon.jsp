@@ -19,7 +19,6 @@
                 <li class="active"><a href="">Moje konto</a></li>
                 <li class="active"><a href="schedule">Harmonogram meczy</a></li>
             </ul>
-            <button class="btn btn-danger navbar-btn" onclick="location.href='/newCoupon'">Kupon</button>
             <button id=" btn" class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
         </div>
     </nav>
@@ -30,19 +29,25 @@
         <thead>
         <tr>
             <th scope="col" class="text-center">mecz</th>
+            <th scope="col" class="text-center">kurs</th>
+            <th scope="col" class="text-center">wybór</th>
             <th scope="col" class="text-center">&nbsp</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach var="selectedMatch" items="${selectedMatches}">
             <tr>
-                <td>${selectedMatch.volleyballMatch}</td>
+                <td>${selectedMatch.match}</td>
+                <td>${selectedMatch.singleCourse}</td>
+                <td>${selectedMatch.choice}</td>
                 <td><button>Usuń</button></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
 </div>
+<p>Kurs całkowity:</p>
+<p>Stawka:</p>
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

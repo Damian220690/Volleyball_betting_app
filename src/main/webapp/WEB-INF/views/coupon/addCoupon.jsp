@@ -46,8 +46,8 @@
                 <tr class="t">
                     <td class="options">
                         <div id="betOptions">
-                            <label class="firstTeam"><input type="radio" name="toggle"><span>1</span></label>
-                            <label class="secondTeam"><input type="radio" name="toggle"><span>2</span></label>
+                            <label class="firstTeam"><input type="radio" name="toggle" value="1"><span>1</span></label>
+                            <label class="secondTeam"><input type="radio" name="toggle" value="2"><span>2</span></label>
                         </div>
                     </td>
                 </tr>

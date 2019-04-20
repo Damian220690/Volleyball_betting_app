@@ -2,6 +2,7 @@ package pl.coderslab.model.POJO;
 
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Round {
     private int roundNumber;
@@ -28,6 +29,10 @@ public class Round {
     public void setMatch(String[] match) {
         this.match = match;
     }
+
+//    public HashMap<Long,Long> getMatchNumber(){
+//
+//    }
 
     @Override
     public String toString() {
