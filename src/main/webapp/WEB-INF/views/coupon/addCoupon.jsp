@@ -18,7 +18,7 @@
                 <li class="active"><a href="">Moje konto</a></li>
                 <li class="active"><a href="schedule">Harmonogram meczy</a></li>
             </ul>
-            <button class="btn btn-danger navbar-btn" onclick="location.href='/newCoupon'">Kupon</button>
+            <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
             <button id=" btn" class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
         </div>
     </nav>
@@ -36,18 +36,20 @@
                 </tr>
                 </thead>
                 <tbody>
+                <% int count =1;%>
                 <c:forEach var="match" items="${rounds.match}">
                 <tr>
                     <td class="text-center">${match}</td>
                     <td class="text-center">
-                        <button class="open">Wybierz</button>
+                        <button class="open">Wybierz </button>
                     </td>
                 </tr>
                 <tr class="t">
                     <td class="options">
                         <div id="betOptions">
-                            <label class="firstTeam"><input type="radio" name="toggle" value="1"><span>1</span></label>
-                            <label class="secondTeam"><input type="radio" name="toggle" value="2"><span>2</span></label>
+                            <label class="firstTeam"><input type="radio" name="toggle" value="${rounds.roundNumber}/<%= count%>/1"><span>1</span></label>
+                            <label class="secondTeam"><input type="radio" name="toggle" value="${rounds.roundNumber}/<%= count%>/2"><span>2</span></label>
+                            <%= count++ %>
                         </div>
                     </td>
                 </tr>

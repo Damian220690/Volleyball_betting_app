@@ -7,6 +7,9 @@
     <title>Coupons</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../static/css/userCouponStyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div>
@@ -19,6 +22,7 @@
                 <li class="active"><a href="">Moje konto</a></li>
                 <li class="active"><a href="schedule">Harmonogram meczy</a></li>
             </ul>
+            <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
             <button id=" btn" class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
         </div>
     </nav>
@@ -38,17 +42,22 @@
         <c:forEach var="selectedMatch" items="${selectedMatches}">
             <tr>
                 <td>${selectedMatch.match}</td>
-                <td>${selectedMatch.singleCourse}</td>
+                <td class="course">${selectedMatch.singleCourse}</td>
                 <td>${selectedMatch.choice}</td>
-                <td><button>Usuń</button></td>
+                <td><a id="deleteButton" href="http://localhost:8080/coupon/delete/${selectedMatch.id}">Usuń</a></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
 </div>
-<p>Kurs całkowity:</p>
-<p>Stawka:</p>
-
+<p>Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
+<form method="post">
+    <label for="deposit">Stawka</label>
+    <input type="number" min="2" max="5000" id="deposit">
+    <input type="submit" value="Postaw">
+</form>
+<p>Do wygrania:<span id="possibleWin"></span> </p>
+<p><a href="http://localhost:8080/matches">Powrót</a></p>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -59,5 +68,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="../../../../static/js/userCoupon.js"></script>
 </body>
 </html>

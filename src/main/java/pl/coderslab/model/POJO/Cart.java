@@ -3,25 +3,19 @@ package pl.coderslab.model.POJO;
 import pl.coderslab.model.entities.CouponMatch;
 
 public class Cart {
-    private long id;
+    private int id;
     private String match;
     private double singleCourse;
+    private int choice;
 
     public Cart() {
     }
 
-    public Cart(int id, String match, double singleCourse) {
+    public Cart(int id, String match, double singleCourse, int choice) {
         this.id = id;
         this.match = match;
         this.singleCourse = singleCourse;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.choice = choice;
     }
 
     public String getMatch() {
@@ -40,19 +34,30 @@ public class Cart {
         this.singleCourse = singleCourse;
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+
+    public int getChoice() {
+        return choice;
+    }
+
+    public void setChoice(int choice) {
+        this.choice = choice;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return this.getId() == ((Cart) obj).getId();
-    }
-
-    public void toCart(CouponMatch couponMatch){
-        this.id = couponMatch.getId();
-        this.match = couponMatch.getVolleyballMatch();
-        this.singleCourse = couponMatch.getMatchCourse();
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", match='" + match + '\'' +
+                ", singleCourse=" + singleCourse +
+                ", choice=" + choice +
+                '}';
     }
 }

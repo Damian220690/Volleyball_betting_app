@@ -1,6 +1,5 @@
 package pl.coderslab.model.POJO;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import pl.coderslab.model.entities.VolleyballTeam;
 import pl.coderslab.repositories.VolleyballTeamRepository;
 
@@ -9,7 +8,7 @@ import java.util.List;
 
 public class RoundManager {
 
-    private int counter = 1;
+    private int roundCounter = 1;
 
     public List<Round> generateRounds(VolleyballTeamRepository volleyballTeamRepository){
         List<Round> rounds = new ArrayList<>();
@@ -21,10 +20,9 @@ public class RoundManager {
         }
         List<String[]> matches = matchesSchedule.generateMatchesSchedule(teamMembers);
         for(String[] match : matches) {
-            rounds.add(new Round(counter++, match));
-        }
+                rounds.add(new Round(roundCounter++, match));
+            }
         return rounds;
     }
-
 
 }

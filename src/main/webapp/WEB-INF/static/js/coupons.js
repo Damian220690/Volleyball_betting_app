@@ -12,7 +12,10 @@ $(function () {
 
         $(".open").click(function (e) {
             e.preventDefault();
-            console.log( $(this).parent().parent().next().children());
             $(this).parent().parent().next().children().toggle('slow');
         });
+
+    $('input[type=\'radio\']').on('change', function(e) {
+        $(location).attr('href',"http://localhost:8080/coupon/add/"+this.value);
+    });
 });

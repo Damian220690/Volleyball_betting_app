@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.model.POJO.Player;
 import pl.coderslab.model.POJO.Round;
 import pl.coderslab.model.POJO.RoundManager;
+import pl.coderslab.repositories.RoundDao;
 import pl.coderslab.repositories.VolleyballTeamRepository;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class CouponControllers {
     @Autowired
     VolleyballTeamRepository volleyballTeamRepository;
 
-    @GetMapping("/addCoupon")
+    @GetMapping("/matches")
     public String addCoupon(Model model){
         RoundManager roundManager = new RoundManager();
         List<Round> rounds = roundManager.generateRounds(volleyballTeamRepository);
