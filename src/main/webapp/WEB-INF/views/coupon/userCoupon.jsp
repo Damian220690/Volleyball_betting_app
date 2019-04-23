@@ -28,6 +28,7 @@
     </nav>
 </div>
 <div>
+    <form method="post">
     <h2>Wybrane mecze:</h2>
     <table class="table .table-sm" id="couponMatchList">
         <thead>
@@ -41,7 +42,7 @@
         <tbody>
         <c:forEach var="selectedMatch" items="${selectedMatches}">
             <tr>
-                <td>${selectedMatch.match}</td>
+                <td><input type="text" name="match" value="${selectedMatch.match}" readonly="readonly" ></td>
                 <td class="course">${selectedMatch.singleCourse}</td>
                 <td>${selectedMatch.choice}</td>
                 <td><a id="deleteButton" href="http://localhost:8080/coupon/delete/${selectedMatch.id}">Usuń</a></td>
@@ -51,13 +52,16 @@
     </table>
 </div>
 <p>Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
-<form method="post">
     <label for="deposit">Stawka</label>
     <input type="number" min="2" max="5000" id="deposit">
     <input type="submit" value="Postaw">
 </form>
 <p>Do wygrania:<span id="possibleWin"></span> </p>
+
 <p><a href="http://localhost:8080/matches">Powrót</a></p>
+<footer class="footer">
+    <p>Numer kuponu: ${couponNumber}</p>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

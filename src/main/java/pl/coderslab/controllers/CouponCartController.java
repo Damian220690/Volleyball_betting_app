@@ -2,8 +2,8 @@ package pl.coderslab.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.POJO.Cart;
 import pl.coderslab.model.POJO.Round;
 import pl.coderslab.model.POJO.RoundManager;
@@ -14,13 +14,14 @@ import pl.coderslab.repositories.VolleyballTeamRepository;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class CouponCartController {
 
     private int idCounter = 0;
     private double fullCourse = 1;
-    Cart cart;
+    private Cart cart;
 
 
     @Autowired
@@ -42,6 +43,8 @@ public class CouponCartController {
         String match = RoundDao.findMatchInSpecificRound(rounds, roundNumber, matchNumber);
         List<Cart> selectedMatches = (List<Cart>) session.getAttribute("selectedMatches");
         if (selectedMatches == null || selectedMatches.size() == 0) {
+            UUID uuid = UUID.randomUUID();
+            session.setAttribute("couponNumber", uuid);
             fullCourse = 1;
             idCounter = 0;
             cart = new Cart(idCounter++, match, 2.0, choice);
@@ -69,4 +72,10 @@ public class CouponCartController {
         return "/coupon/userCoupon";
     }
 
+    @PostMapping("/coupon/**")
+    @ResponseBody
+    public String processForm(@RequestParam String match, @RequestParam double deposit){
+        String a = match + deposit;
+        return a;
+    }
 }
