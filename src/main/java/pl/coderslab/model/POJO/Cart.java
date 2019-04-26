@@ -1,7 +1,5 @@
 package pl.coderslab.model.POJO;
 
-import pl.coderslab.model.entities.CouponMatch;
-
 public class Cart {
     private int id;
     private String match;

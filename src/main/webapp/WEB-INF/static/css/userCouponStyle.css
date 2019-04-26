@@ -13,3 +13,25 @@ input[type=number]::-webkit-outer-spin-button {
     color: white;
     text-align: center;
 }
+#matches{
+    border: none;
+    width : 100%;
+    display: inline;
+    font-family: inherit;
+    font-size: inherit;
+}
+#possibleWin {
+    border: none;
+    width : 200px;
+    display: inline;
+    font-family: inherit;
+    font-size: inherit;
+}
+#couponNum{
+    border: none;
+    background-color: red;
+    width : 300px;
+    display: inline;
+    font-family: inherit;
+    font-size: inherit;
+}

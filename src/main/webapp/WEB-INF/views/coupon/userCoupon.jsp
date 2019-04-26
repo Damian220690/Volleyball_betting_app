@@ -1,5 +1,3 @@
-<%@ taglib prefix="form"
-           uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page language="Java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
@@ -7,9 +5,9 @@
     <title>Coupons</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="../../../../static/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="../../../../static/css/userCouponStyle.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../../static/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../../static/css/userCouponStyle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div>
@@ -29,39 +27,44 @@
 </div>
 <div>
     <form method="post">
-    <h2>Wybrane mecze:</h2>
-    <table class="table .table-sm" id="couponMatchList">
-        <thead>
-        <tr>
-            <th scope="col" class="text-center">mecz</th>
-            <th scope="col" class="text-center">kurs</th>
-            <th scope="col" class="text-center">wybór</th>
-            <th scope="col" class="text-center">&nbsp</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach var="selectedMatch" items="${selectedMatches}">
+        <h2>Wybrane mecze:</h2>
+        <table class="table .table-sm" id="couponMatchList">
+            <thead>
             <tr>
-                <td><input type="text" name="match" value="${selectedMatch.match}" readonly="readonly" ></td>
-                <td class="course">${selectedMatch.singleCourse}</td>
-                <td>${selectedMatch.choice}</td>
-                <td><a id="deleteButton" href="http://localhost:8080/coupon/delete/${selectedMatch.id}">Usuń</a></td>
+                <th scope="col" class="text-center">mecz</th>
+                <th scope="col" class="text-center">kurs</th>
+                <th scope="col" class="text-center">wybór</th>
+                <th scope="col" class="text-center">&nbsp</th>
             </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</div>
-<p>Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
-    <label for="deposit">Stawka</label>
-    <input type="number" min="2" max="5000" id="deposit">
-    <input type="submit" value="Postaw">
-</form>
-<p>Do wygrania:<span id="possibleWin"></span> </p>
+            </thead>
+            <tbody>
+            <c:forEach var="selectedMatch" items="${selectedMatches}">
+                <tr>
+                    <td><input name="matches" id="matches" type="text" value="${selectedMatch.match}"
+                               readonly="readonly"></td>
+                    <td class="course">${selectedMatch.singleCourse}</td>
+                    <td>${selectedMatch.choice}</td>
+                    <td><a id="deleteButton" href="http://localhost:8080/coupon/delete/${selectedMatch.id}">Usuń</a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
 
-<p><a href="http://localhost:8080/matches">Powrót</a></p>
-<footer class="footer">
-    <p>Numer kuponu: ${couponNumber}</p>
-</footer>
+        <p>Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
+        <label for="deposit">Stawka</label>
+        <input type="number" min="2" max="5000" step=".01" id="deposit" name="deposit">
+        <input type="submit" value="Postaw">
+        <p>Do wygrania: <input id="possibleWin" name="possibleWin" readonly="readonly"/></p>
+        <p><a href="http://localhost:8080/matches">Powrót</a></p>
+        <footer class="footer">
+            <p>
+                <label for="couponNum">Numer kuponu:</label>
+                <input name="couponNumber" id="couponNum" type="text" value="${couponNumber}" readonly="readonly">
+            </p>
+        </footer>
+    </form>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
