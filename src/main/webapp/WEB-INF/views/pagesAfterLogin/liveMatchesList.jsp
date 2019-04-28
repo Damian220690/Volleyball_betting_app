@@ -17,12 +17,15 @@
             </div>
             <ul class="nav navbar-nav m4-auto">
                 <li class="active"><a href="">Moje konto</a></li>
-                <li class="active"><a href="schedule">Harmonogram meczy</a></li>
+                <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
+                <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
             </ul>
+            <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
             <button class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
         </div>
     </nav>
     <h2>Harmonogram rozgrywek:</h2>
+    <% int count =1;%>
     <c:forEach var="rounds" items="${rounds}">
         <table class="table .table-sm" id="schedule">
 
@@ -37,7 +40,7 @@
             <c:forEach var="match" items="${rounds.match}">
                 <tr>
                     <td class="text-center">${match}</td>
-                    <td class="text-center" id="result">${result}</td>
+                    <td class="text-center" id="<%= count++ %>">${result}</td>
                 </tr>
             </c:forEach>
             </tbody>

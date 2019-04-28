@@ -16,7 +16,8 @@
             </div>
             <ul class="nav navbar-nav m4-auto">
                 <li class="active"><a href="">Moje konto</a></li>
-                <li class="active"><a href="schedule">Harmonogram meczy</a></li>
+                <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
+                <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
             </ul>
             <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
             <button id=" btn" class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>

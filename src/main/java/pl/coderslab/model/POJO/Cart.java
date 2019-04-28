@@ -58,4 +58,16 @@ public class Cart {
                 ", choice=" + choice +
                 '}';
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    // napisać equalsa
+    @Override
+    public boolean equals(Object obj) {
+        this.getMatch().equals(obj);
+        return false;
+    }
 }

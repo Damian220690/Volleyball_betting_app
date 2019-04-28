@@ -18,7 +18,8 @@
             </div>
             <ul class="nav navbar-nav m4-auto">
                 <li class="active"><a href="">Moje konto</a></li>
-                <li class="active"><a href="schedule">Harmonogram meczy</a></li>
+                <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
+                <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
             </ul>
             <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
             <button id=" btn" class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
@@ -53,7 +54,7 @@
 
         <p>Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
         <label for="deposit">Stawka</label>
-        <input type="number" min="2" max="5000" step=".01" id="deposit" name="deposit">
+        <input type="number" min="2" max="5000" step=".01" id="deposit" name="deposit" required>
         <input type="submit" value="Postaw">
         <p>Do wygrania: <input id="possibleWin" name="possibleWin" readonly="readonly"/></p>
         <p><a href="http://localhost:8080/matches">Powrót</a></p>

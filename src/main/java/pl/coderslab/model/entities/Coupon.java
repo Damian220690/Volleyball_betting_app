@@ -1,7 +1,6 @@
 package pl.coderslab.model.entities;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 @Table(name = "coupons")
@@ -9,7 +8,7 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private UUID couponsNumber;
+    private String couponsNumber;
     private String matches;
     private int matchType;
     private double deposit;
@@ -20,7 +19,7 @@ public class Coupon {
     public Coupon() {
     }
 
-    public Coupon(UUID couponsNumber, String matches, int matchType, double deposit, double possibleWin, User user) {
+    public Coupon(String couponsNumber, String matches, int matchType, double deposit, double possibleWin, User user) {
         this.couponsNumber = couponsNumber;
         this.matches = matches;
         this.matchType = matchType;
@@ -29,11 +28,11 @@ public class Coupon {
         this.user = user;
     }
 
-    public UUID getCouponsNumber() {
+    public String getCouponsNumber() {
         return couponsNumber;
     }
 
-    public void setCouponsNumber(UUID couponsNumber) {
+    public void setCouponsNumber(String couponsNumber) {
         this.couponsNumber = couponsNumber;
     }
 
