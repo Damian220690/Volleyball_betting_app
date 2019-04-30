@@ -36,14 +36,16 @@
                 <th scope="col" class="text-center">&nbsp</th>
             </tr>
             </thead>
-            <tbody>
+
             <c:forEach var="match" items="${rounds.match}">
+            <tbody>
                 <tr>
-                    <td class="text-center">${match}</td>
+                    <td id="match" class="text-center">${match}</td>
                     <td class="text-center" id="<%= count++ %>">${result}</td>
                 </tr>
-            </c:forEach>
             </tbody>
+            </c:forEach>
+
         </table>
     </c:forEach>
 </div>

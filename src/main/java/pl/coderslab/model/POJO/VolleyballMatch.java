@@ -34,7 +34,7 @@ public class VolleyballMatch extends Thread {
 
     @Override
     public void run() {
-        System.out.println("Match " + team1 + " : "+ team2 + " started");
+        System.out.println("Match " + team1 + " : " + team2 + " started");
         while (this.getSetsTeam1() < 2 || this.getSetsTeam2() < 2) {
             synchronized (this) {
                 score = pointsIncrement();
@@ -50,17 +50,29 @@ public class VolleyballMatch extends Thread {
                 matchProgress.setSetsTeam2(setsTeam2);
                 matchesProgressRepository.save(matchProgress);
 
-                if (setsTeam1 == 2 || setsTeam2 == 2) {
+                if (matchProgress.getSetsTeam1() == 2 || matchProgress.getSetsTeam2()  == 2) {
+//                    VolleyballTeam winnerTeam = volleyballTeamRepository.findByTeamMembers(team1);
+//                    VolleyballTeam loserTeam = volleyballTeamRepository.findByTeamMembers(team2.trim());
+//                    System.out.println("winTeam " + winnerTeam + " "+ matchProgress.getSetsTeam1());
+//                    System.out.println("loserTeam "+ loserTeam+" "+ matchProgress.getSetsTeam2());
+//                    System.out.println("-------------------");
+
                     if (setsTeam1 > setsTeam2) {
-                        break;
-                    } else {
-                        break;
-                    }
+                        updateInformationAboutTeamInLeagueTable(matchProgress.getTeam1().trim(), setsTeam1, setsTeam2,true);
+                        updateInformationAboutTeamInLeagueTable(matchProgress.getTeam2().trim(), setsTeam2, setsTeam1,false);
+                    break;
+                } else {
+                        System.out.println("LOL");
+                        updateInformationAboutTeamInLeagueTable(matchProgress.getTeam2().trim(), setsTeam2, setsTeam1,true);
+                        updateInformationAboutTeamInLeagueTable(matchProgress.getTeam1().trim(), setsTeam1, setsTeam2,false);
+                    break;
                 }
             }
-            sleep(1);
         }
+        sleep(1);
     }
+
+}
 
     private void sleep(int seconds) {
         try {
@@ -93,7 +105,6 @@ public class VolleyballMatch extends Thread {
             }
         }
         if (pointsTeam1 == 21 || pointsTeam2 == 21) {
-            System.out.println(pointsTeam1 + " - " + pointsTeam2);
             if (pointsTeam1 > pointsTeam2) {
                 setsTeam1++;
             } else {
@@ -122,8 +133,20 @@ public class VolleyballMatch extends Thread {
         return actionGroup[numberOfAction];
     }
 
+    public synchronized void updateInformationAboutTeamInLeagueTable(String team, int setsWinnerTeam, int setsLoserTeam, boolean hasWon) {
+        VolleyballTeam teamFromDB = volleyballTeamRepository.findByTeamMembers(team);
+        if (hasWon = true) {
+            teamFromDB.setMainPoints(teamFromDB.getMainPoints() + 2);
+        } else {
+            teamFromDB.setMainPoints(teamFromDB.getMainPoints());
+        }
+        teamFromDB.setNumberOfMatches(teamFromDB.getNumberOfMatches() + 1);
+        teamFromDB.setWinSets(teamFromDB.getWinSets() + setsWinnerTeam);
+        teamFromDB.setLostSets(teamFromDB.getLostSets() + setsLoserTeam);
+        volleyballTeamRepository.save(teamFromDB);
+    }
 
-    public String getTeam1() {
+    public synchronized String getTeam1() {
         return team1;
     }
 
@@ -131,7 +154,7 @@ public class VolleyballMatch extends Thread {
         this.team1 = team1;
     }
 
-    public String getTeam2() {
+    public synchronized String getTeam2() {
         return team2;
     }
 
@@ -139,7 +162,7 @@ public class VolleyballMatch extends Thread {
         this.team2 = team2;
     }
 
-    public int getPointsTeam1() {
+    public synchronized int getPointsTeam1() {
         return pointsTeam1;
     }
 
@@ -147,7 +170,7 @@ public class VolleyballMatch extends Thread {
         this.pointsTeam1 = pointsTeam1;
     }
 
-    public int getPointsTeam2() {
+    public synchronized int getPointsTeam2() {
         return pointsTeam2;
     }
 
@@ -170,6 +193,7 @@ public class VolleyballMatch extends Thread {
     public void setSetsTeam2(int setsTeam2) {
         this.setsTeam2 = setsTeam2;
     }
+
 
     @Override
     public String toString() {

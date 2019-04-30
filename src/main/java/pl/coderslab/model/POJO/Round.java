@@ -31,15 +31,11 @@ public class Round extends Thread {
     public void run() {
 
         List<VolleyballMatch> volleyballMatches = getVolleyballMatches();
-
-        System.out.println("Round " + roundNumber + " started");
-
         for (VolleyballMatch volleyballMatch : volleyballMatches) { ;
             MatchProgress matchProgress = new MatchProgress(volleyballMatch.getTeam1(),
                     volleyballMatch.getTeam2(), volleyballMatch.getPointsTeam1(), volleyballMatch.getPointsTeam2(),
             volleyballMatch.getSetsTeam1(),volleyballMatch.getSetsTeam2());
             volleyballMatch.start();
-            System.out.println(volleyballMatch.getPointsTeam2());
         }
 
         for (VolleyballMatch volleyballMatch : volleyballMatches) {
@@ -52,7 +48,7 @@ public class Round extends Thread {
         queue.add("round finished");
 
         try {
-            TimeUnit.SECONDS.sleep(10);
+            TimeUnit.SECONDS.sleep(30);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

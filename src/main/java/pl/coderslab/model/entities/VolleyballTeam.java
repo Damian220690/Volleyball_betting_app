@@ -12,10 +12,10 @@ public class VolleyballTeam {
     private long numberOfMatches;
     private String teamMembers;
     private int  mainPoints;
-    private String winSets;
-    private String lostSets;
+    private int winSets;
+    private int lostSets;
 
-    public VolleyballTeam(long placeInTable, long numberOfMatches, String teamMembers, int mainPoints, String winSets, String lostSets) {
+    public VolleyballTeam(long placeInTable, long numberOfMatches, String teamMembers, int mainPoints, int winSets, int lostSets) {
         this.placeInTable = placeInTable;
         this.numberOfMatches = numberOfMatches;
         this.teamMembers = teamMembers;
@@ -67,19 +67,32 @@ public class VolleyballTeam {
         this.mainPoints = mainPoints;
     }
 
-    public String getWinSets() {
+    public int getWinSets() {
         return winSets;
     }
 
-    public void setWinSets(String winSets) {
+    public void setWinSets(int winSets) {
         this.winSets = winSets;
     }
 
-    public String getLostSets() {
+    public int getLostSets() {
         return lostSets;
     }
 
-    public void setLostSets(String lostSets) {
+    public void setLostSets(int lostSets) {
         this.lostSets = lostSets;
+    }
+
+    @Override
+    public String toString() {
+        return "VolleyballTeam{" +
+                "id=" + id +
+                ", placeInTable=" + placeInTable +
+                ", numberOfMatches=" + numberOfMatches +
+                ", teamMembers='" + teamMembers + '\'' +
+                ", mainPoints=" + mainPoints +
+                ", winSets=" + winSets +
+                ", lostSets=" + lostSets +
+                '}';
     }
 }

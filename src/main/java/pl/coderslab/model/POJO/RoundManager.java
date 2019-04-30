@@ -30,8 +30,6 @@ public class RoundManager {
     }
 
     private synchronized void generateRounds(VolleyballTeamRepository volleyballTeamRepository, MatchesProgressRepository matchesProgressRepository){
-        System.out.println("matches" + this.matchesProgressRepository);
-
         MatchesSchedule matchesSchedule = new MatchesSchedule();
         List<VolleyballTeam> teams = volleyballTeamRepository.findAll();
         List<String> teamMembers = new ArrayList<>();

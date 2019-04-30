@@ -33,6 +33,20 @@ public class VolleyballMatchController {
         return allMatches;
     }
 
+    @GetMapping("/api/LOL")
+    @ResponseBody
+    public List<MatchProgress> getMatchesResult2() {
+        List<MatchProgress> allMatches = matchesProgressRepository.findAll();
+        for(MatchProgress match : allMatches ){
+            System.out.println(match.getTeam1() + " "+ match.getSetsTeam1());
+            System.out.println(match.getTeam2() + " "+ match.getSetsTeam2());
+            System.out.println("------------");
+
+        }
+        return allMatches;
+    }
+
+
 
     //    @GetMapping("api/schedule")
 //    @ResponseBody

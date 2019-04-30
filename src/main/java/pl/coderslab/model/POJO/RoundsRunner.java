@@ -17,9 +17,6 @@ public class RoundsRunner {
     public void start() {
 
         new Thread(() -> {
-
-            System.out.println("Competition started");
-
             List<Round> rounds = roundManager.getRounds();
 
             for (Round round : rounds) {
@@ -30,8 +27,6 @@ public class RoundsRunner {
                     e.printStackTrace();
                 }
             }
-
-            System.out.println("Competition finished");
         }).start();
     }
 }
