@@ -18,7 +18,6 @@ public class RoundsRunner {
 
         new Thread(() -> {
             List<Round> rounds = roundManager.getRounds();
-
             for (Round round : rounds) {
                 round.start();
                 try {

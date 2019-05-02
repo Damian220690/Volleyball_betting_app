@@ -34,7 +34,6 @@ public class VolleyballMatch extends Thread {
 
     @Override
     public void run() {
-        System.out.println("Match " + team1 + " : " + team2 + " started");
         while (this.getSetsTeam1() < 2 || this.getSetsTeam2() < 2) {
             synchronized (this) {
                 score = pointsIncrement();
@@ -51,18 +50,11 @@ public class VolleyballMatch extends Thread {
                 matchesProgressRepository.save(matchProgress);
 
                 if (matchProgress.getSetsTeam1() == 2 || matchProgress.getSetsTeam2()  == 2) {
-//                    VolleyballTeam winnerTeam = volleyballTeamRepository.findByTeamMembers(team1);
-//                    VolleyballTeam loserTeam = volleyballTeamRepository.findByTeamMembers(team2.trim());
-//                    System.out.println("winTeam " + winnerTeam + " "+ matchProgress.getSetsTeam1());
-//                    System.out.println("loserTeam "+ loserTeam+" "+ matchProgress.getSetsTeam2());
-//                    System.out.println("-------------------");
-
                     if (setsTeam1 > setsTeam2) {
                         updateInformationAboutTeamInLeagueTable(matchProgress.getTeam1().trim(), setsTeam1, setsTeam2,true);
                         updateInformationAboutTeamInLeagueTable(matchProgress.getTeam2().trim(), setsTeam2, setsTeam1,false);
                     break;
                 } else {
-                        System.out.println("LOL");
                         updateInformationAboutTeamInLeagueTable(matchProgress.getTeam2().trim(), setsTeam2, setsTeam1,true);
                         updateInformationAboutTeamInLeagueTable(matchProgress.getTeam1().trim(), setsTeam1, setsTeam2,false);
                     break;
@@ -135,7 +127,7 @@ public class VolleyballMatch extends Thread {
 
     public synchronized void updateInformationAboutTeamInLeagueTable(String team, int setsWinnerTeam, int setsLoserTeam, boolean hasWon) {
         VolleyballTeam teamFromDB = volleyballTeamRepository.findByTeamMembers(team);
-        if (hasWon = true) {
+        if (hasWon == true) {
             teamFromDB.setMainPoints(teamFromDB.getMainPoints() + 2);
         } else {
             teamFromDB.setMainPoints(teamFromDB.getMainPoints());
@@ -194,17 +186,4 @@ public class VolleyballMatch extends Thread {
         this.setsTeam2 = setsTeam2;
     }
 
-
-    @Override
-    public String toString() {
-        return "VolleyballMatch{" +
-                "team1='" + team1 + '\'' +
-                ", team2='" + team2 + '\'' +
-                ", pointsTeam1=" + pointsTeam1 +
-                ", pointsTeam2=" + pointsTeam2 +
-                ", setsTeam1=" + setsTeam1 +
-                ", setsTeam2=" + setsTeam2 +
-                ", score='" + score + '\'' +
-                "} " + super.toString();
-    }
 }

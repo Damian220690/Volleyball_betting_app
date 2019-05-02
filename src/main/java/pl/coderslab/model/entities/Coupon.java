@@ -28,6 +28,21 @@ public class Coupon {
         this.user = user;
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Coupon coupon = (Coupon) obj;
+        boolean result = false;
+        if(this.getCouponsNumber()== coupon.getCouponsNumber()){
+            result = true;
+        }
+        return result;
+    }
+
     public String getCouponsNumber() {
         return couponsNumber;
     }
@@ -82,5 +97,18 @@ public class Coupon {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Coupon{" +
+                "id=" + id +
+                ", couponsNumber='" + couponsNumber + '\'' +
+                ", matches='" + matches + '\'' +
+                ", matchType=" + matchType +
+                ", deposit=" + deposit +
+                ", possibleWin=" + possibleWin +
+                ", user=" + user +
+                '}';
     }
 }

@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-
 <head>
     <title>PrivBet</title>
     <meta charset="utf-8">
@@ -37,9 +36,10 @@
         </tr>
         </thead>
         <tbody>
+        <% int placeInTable =1;%>
         <c:forEach var="volleyballTeam" items="${volleyballTeams}">
-            <tr>
-                <th scope="row" class="text-center">${volleyballTeam.placeInTable}</th>
+            <tr id="row<%= placeInTable%>">
+                <th scope="row" class="text-center"><%= placeInTable++ %></th>
                 <td class="text-center">${volleyballTeam.teamMembers}</td>
                 <td class="text-center">${volleyballTeam.numberOfMatches}</td>
                 <td class="text-center">${volleyballTeam.mainPoints}</td>
