@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -32,16 +33,20 @@
             <tr>
                 <th scope="col" class="text-center">&nbsp</th>
                 <th scope="col" class="text-center">mecz</th>
-                <th scope="col" class="text-center">kurs</th>
+                <th scope="col" class="text-center">wynik</th>
                 <th scope="col" class="text-center">wybór</th>
             </tr>
             </thead>
             <tbody>
+            <c:forEach items="${fullDetailsAboutCouponMatch}" var="detailAboutCouponMatch">
+
                 <tr>
                     <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>${detailAboutCouponMatch.match}</td>
+                    <td id="${detailAboutCouponMatch.matchId}">${detailAboutCouponMatch.setTeam1} : ${detailAboutCouponMatch.setTeam2}</td>
+                    <td>${detailAboutCouponMatch.matchType}</td>
                 </tr>
+            </c:forEach>
             </tbody>
         </table>
 
@@ -57,7 +62,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-<script src="../../../../static/js/userCoupon.js"></script>
+<script src="../../../../static/js/couponDetails.js"></script>
 </body>
 </body>
 </html>

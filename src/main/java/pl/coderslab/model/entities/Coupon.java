@@ -28,20 +28,22 @@ public class Coupon {
         this.user = user;
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        Coupon coupon = (Coupon) obj;
-        boolean result = false;
-        if(this.getCouponsNumber()== coupon.getCouponsNumber()){
-            result = true;
-        }
-        return result;
-    }
+//    @Override
+//    public int hashCode() {
+//        return getCouponsNumber().hashCode();
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) {
+//            return true;
+//        }
+//        if (obj instanceof Coupon) {
+//            Coupon coupon = (Coupon) obj;
+//            return this.getCouponsNumber() == coupon.getCouponsNumber();
+//        }
+//        return false;
+//    }
 
     public String getCouponsNumber() {
         return couponsNumber;

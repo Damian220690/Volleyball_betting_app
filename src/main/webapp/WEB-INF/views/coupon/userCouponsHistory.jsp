@@ -41,7 +41,7 @@
                 <td class="text-center">${coupon.couponsNumber}</td>
                 <td class="text-center">${coupon.deposit}</td>
                 <td class="text-center">${coupon.possibleWin}</td>
-                <td class="text-center"><a href="http://localhost:8080/user/coupons/1">Szczegóły</a></td>
+                <td class="text-center"><a href="http://localhost:8080/user/coupons/${coupon.couponsNumber}">Szczegóły</a></td>
             </tr>
         </c:forEach>
         </tbody>
