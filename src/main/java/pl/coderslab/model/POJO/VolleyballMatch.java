@@ -47,14 +47,19 @@ public class VolleyballMatch extends Thread {
                 matchProgress.setPointsTeam2(pointsTeam2);
                 matchProgress.setSetsTeam1(setsTeam1);
                 matchProgress.setSetsTeam2(setsTeam2);
+                matchProgress.setMatchStatus("LIVE");
                 matchesProgressRepository.save(matchProgress);
 
                 if (matchProgress.getSetsTeam1() == 2 || matchProgress.getSetsTeam2()  == 2) {
                     if (setsTeam1 > setsTeam2) {
+                        matchProgress.setMatchStatus("1 WINNER");
+                        matchesProgressRepository.save(matchProgress);
                         updateInformationAboutTeamInLeagueTable(matchProgress.getTeam1().trim(), setsTeam1, setsTeam2,true);
                         updateInformationAboutTeamInLeagueTable(matchProgress.getTeam2().trim(), setsTeam2, setsTeam1,false);
                     break;
                 } else {
+                        matchProgress.setMatchStatus("2 WINNER");
+                        matchesProgressRepository.save(matchProgress);
                         updateInformationAboutTeamInLeagueTable(matchProgress.getTeam2().trim(), setsTeam2, setsTeam1,true);
                         updateInformationAboutTeamInLeagueTable(matchProgress.getTeam1().trim(), setsTeam1, setsTeam2,false);
                     break;

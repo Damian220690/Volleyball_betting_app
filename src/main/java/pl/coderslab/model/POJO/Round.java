@@ -34,7 +34,7 @@ public class Round extends Thread {
         for (VolleyballMatch volleyballMatch : volleyballMatches) { ;
             MatchProgress matchProgress = new MatchProgress(volleyballMatch.getTeam1(),
                     volleyballMatch.getTeam2(), volleyballMatch.getPointsTeam1(), volleyballMatch.getPointsTeam2(),
-            volleyballMatch.getSetsTeam1(),volleyballMatch.getSetsTeam2());
+            volleyballMatch.getSetsTeam1(),volleyballMatch.getSetsTeam2(),"LIVE");
             volleyballMatch.start();
         }
 

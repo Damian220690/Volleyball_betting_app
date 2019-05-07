@@ -37,11 +37,14 @@
         <tbody>
         <c:forEach items="${coupons}" var="coupon">
             <tr>
-                <td class="text-center">+</td>
+                <td class="text-center"><img id="${coupon.couponsNumber}" src=""/>
+                </td>
                 <td class="text-center">${coupon.couponsNumber}</td>
                 <td class="text-center">${coupon.deposit}</td>
                 <td class="text-center">${coupon.possibleWin}</td>
-                <td class="text-center"><a href="http://localhost:8080/user/coupons/${coupon.couponsNumber}">Szczegóły</a></td>
+                <td class="text-center">
+                    <a href="http://localhost:8080/user/coupons/${coupon.couponsNumber}">Szczegóły</a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
@@ -56,5 +59,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="../../../../static/js/couponHistory.js"></script>
 </body>
 </html>

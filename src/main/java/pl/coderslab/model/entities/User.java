@@ -19,6 +19,7 @@ public class User {
     @Column(unique = true)
     private String userName;
     private String hashedPassword;
+    private double cash;
 
     public User() {
     }
@@ -30,6 +31,7 @@ public class User {
         this.gender = userDto.getGender();
         this.userName = userDto.getUserName();
         setPassword(userDto.getPassword());
+        this.cash = 200.0;
     }
 
 
@@ -88,5 +90,21 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getHashedPassword() {
+        return hashedPassword;
+    }
+
+    public void setHashedPassword(String hashedPassword) {
+        this.hashedPassword = hashedPassword;
+    }
+
+    public double getCash() {
+        return cash;
+    }
+
+    public void setCash(double cash) {
+        this.cash = cash;
     }
 }

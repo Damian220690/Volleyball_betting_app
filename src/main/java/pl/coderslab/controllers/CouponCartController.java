@@ -89,7 +89,15 @@ public class CouponCartController {
             Coupon coupon = new Coupon(couponNumber, cart.getMatch(), cart.getChoice(), deposit, possibleWin, user);
             couponRepository.save(coupon);
         }
+//        if(user.getCash() > deposit) {
+//            user.setCash(user.getCash() - deposit);
+//        }
+//        else{
+//            // when cash smaller than couponDeposit set max value on the form input to cash value
+//        }
         String newUUID = String.valueOf(UUID.randomUUID());
+//        session.setAttribute("loggedInUser", user);
+//        System.out.println(user.getCash());
         session.setAttribute("couponNumber", newUUID);
         return "/coupon/userCoupon";
     }

@@ -5,6 +5,7 @@
     <title>PrivBet</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link href="static/css/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -18,6 +19,9 @@
             <li class="active"><a href="#">Moje konto</a></li>
             <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
             <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
+        </ul>
+        <ul class="nav navbar-nav m4-auto">
+            <li><i class="fa fa-money fa-4x" aria-hidden="true"></i></li>
         </ul>
         <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
         <button class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>

@@ -1,5 +1,5 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>PrivBet</title>
@@ -16,7 +16,7 @@
                 <a class="navbar-brand" href="/privBet">PrivBet</a>
             </div>
             <ul class="nav navbar-nav m4-auto">
-                <li class="active"><a href="">Moje konto</a></li>
+                <li class="active"><a href="http://localhost:8080/user/account">Moje konto</a></li>
                 <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
                 <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
             </ul>
@@ -24,29 +24,13 @@
             <button class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
         </div>
     </nav>
-    <h2>Harmonogram rozgrywek:</h2>
-    <% int count =1;%>
-    <c:forEach var="rounds" items="${rounds}">
-        <table class="table .table-sm" id="schedule">
-
-            <thead>
-            <tr id="roundCounter">Runda ${rounds.roundNumber}:</tr>
-            <tr>
-                <th scope="col" class="text-center">drużyna</th>
-                <th scope="col" class="text-center">&nbsp</th>
-            </tr>
-            </thead>
-
-            <c:forEach var="match" items="${rounds.match}">
-            <tbody>
-                <tr>
-                    <td id="match" class="text-center">${match}</td>
-                    <td class="text-center" id="<%= count++ %>">${result}</td>
-                </tr>
-            </tbody>
-            </c:forEach>
-        </table>
-    </c:forEach>
+</div>
+<div>
+    <p>Doładuj środki:</p>
+    <form method="post">
+        <input type="number" placeholder="Wprowadź kwotę" step="0.01" min="2" max="20" name="boost">
+        <input type="submit" value="Doładuj">
+    </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
@@ -57,3 +41,4 @@
 <script src="../static/js/matchProgress.js"></script>
 </body>
 </html>
+

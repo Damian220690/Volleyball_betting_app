@@ -8,7 +8,6 @@
     <link href="../../static/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<body>
 <div>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -26,32 +25,33 @@
     </nav>
 </div>
 <div>
-    <form method="post">
-        <h2>Wybrane mecze:</h2>
-        <table class="table .table-sm" id="couponMatchList">
-            <thead>
+    <h2>Wybrane mecze:</h2>
+    <table class="table .table-sm" id="couponMatchList">
+        <thead>
+        <tr>
+            <th scope="col" class="text-center">&nbsp</th>
+            <th scope="col" class="text-center">mecz</th>
+            <th scope="col" class="text-center">wynik</th>
+            <th scope="col" class="text-center">wybór</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${fullDetailsAboutCouponMatch}" var="detailAboutCouponMatch">
+
             <tr>
-                <th scope="col" class="text-center">&nbsp</th>
-                <th scope="col" class="text-center">mecz</th>
-                <th scope="col" class="text-center">wynik</th>
-                <th scope="col" class="text-center">wybór</th>
+                <td><img id="status${detailAboutCouponMatch.matchId}" src=""/></td>
+                <td>${detailAboutCouponMatch.match}</td>
+                <td id="${detailAboutCouponMatch.matchId}">${detailAboutCouponMatch.setTeam1}
+                    : ${detailAboutCouponMatch.setTeam2}</td>
+                <td>${detailAboutCouponMatch.matchType}</td>
             </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${fullDetailsAboutCouponMatch}" var="detailAboutCouponMatch">
-
-                <tr>
-                    <td></td>
-                    <td>${detailAboutCouponMatch.match}</td>
-                    <td id="${detailAboutCouponMatch.matchId}">${detailAboutCouponMatch.setTeam1} : ${detailAboutCouponMatch.setTeam2}</td>
-                    <td>${detailAboutCouponMatch.matchType}</td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-
-        <p>Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
+        </c:forEach>
+        </tbody>
+    </table>
 </div>
+<p>Kurs: <span id="fullCourse">${fullCourse}</span></p>
+<p>Wkład: <span id="deposit">${deposit}</span></p>
+<p>Wygrana: <span id="possibleWin">${possibleWin}</span></p>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -63,6 +63,5 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 <script src="../../../../static/js/couponDetails.js"></script>
-</body>
 </body>
 </html>

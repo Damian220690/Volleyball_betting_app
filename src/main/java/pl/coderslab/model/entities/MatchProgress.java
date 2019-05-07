@@ -14,14 +14,16 @@ public class MatchProgress {
     private int pointsTeam2;
     private int setsTeam1;
     private int setsTeam2;
+    private String matchStatus;
 
-    public MatchProgress(String team1, String team2, int pointsTeam1, int pointsTeam2, int setsTeam1, int setsTeam2) {
+    public MatchProgress(String team1, String team2, int pointsTeam1, int pointsTeam2, int setsTeam1, int setsTeam2, String matchStatus) {
         this.team1 = team1;
         this.team2 = team2;
         this.pointsTeam1 = pointsTeam1;
         this.pointsTeam2 = pointsTeam2;
         this.setsTeam1 = setsTeam1;
         this.setsTeam2 = setsTeam2;
+        this.matchStatus = matchStatus;
     }
 
     public MatchProgress() {
@@ -83,16 +85,11 @@ public class MatchProgress {
         this.setsTeam2 = setsTeam2;
     }
 
-    @Override
-    public String toString() {
-        return "MatchProgress{" +
-                "id=" + id +
-                ", team1='" + team1 + '\'' +
-                ", team2='" + team2 + '\'' +
-                ", pointsTeam1=" + pointsTeam1 +
-                ", pointsTeam2=" + pointsTeam2 +
-                ", setsTeam1=" + setsTeam1 +
-                ", setsTeam2=" + setsTeam2 +
-                '}';
+    public String getMatchStatus() {
+        return matchStatus;
+    }
+
+    public void setMatchStatus(String matchStatus) {
+        this.matchStatus = matchStatus;
     }
 }
