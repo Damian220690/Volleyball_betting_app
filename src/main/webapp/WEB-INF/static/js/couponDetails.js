@@ -25,7 +25,8 @@ $(function () {
                 }
 
                 if($("#status"+details.matchId).attr("src")===loserIcon){
-                    $("#possibleWin").text("--");
+                    console.log($("#status"+details.matchId));
+                    $("#possibleWinField").text("--");
                 }
                 $("#" + details.matchId).text(details.setTeam1 +  " : " + details.setTeam2);
             }

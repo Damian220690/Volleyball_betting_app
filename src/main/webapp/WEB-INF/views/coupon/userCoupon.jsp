@@ -6,29 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link href="../static/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="../../../../static/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="../../../../static/css/userCouponStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="../../../../../static/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/../../../../static/css/userCouponStyle.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<div>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/privBet">PrivBet</a>
-            </div>
-            <ul class="nav navbar-nav m4-auto">
-                <li class="active"><a href="">Moje konto</a></li>
-                <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
-                <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
-            </ul>
-            <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
-            <button id=" btn" class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
-        </div>
-    </nav>
-</div>
+<body id="userCoupon">
 <div>
     <form method="post">
-        <h2>Wybrane mecze:</h2>
+        <h2 id="selectedMatchesHeader">Wybrane mecze:</h2>
         <table class="table .table-sm" id="couponMatchList">
             <thead>
             <tr>
@@ -40,9 +27,9 @@
             </thead>
             <tbody>
             <c:forEach var="selectedMatch" items="${selectedMatches}">
-                <tr>
-                    <td><input name="matches" id="matches" type="text" value="${selectedMatch.match}"
-                               readonly="readonly"></td>
+                <tr id="selectedRow" style="background-color: #9999ff; border: 3px solid #4d4dff;" >
+                    <td style="background-color: #9999ff"><input name="matches" id="matches" type="text" value="${selectedMatch.match}"
+                               readonly="readonly" style="background-color: #9999ff"></td>
                     <td class="course">${selectedMatch.singleCourse}</td>
                     <td>${selectedMatch.choice}</td>
                     <td><a id="deleteButton" href="http://localhost:8080/coupon/delete/${selectedMatch.id}">Usuń</a>
@@ -52,12 +39,12 @@
             </tbody>
         </table>
 
-        <p>Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
-        <label for="deposit">Stawka</label>
+        <p id="course">Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
+        <label id="depositLabel"for="deposit">Stawka</label>
         <input type="number" min="2" max="5000" step=".01" id="deposit" name="deposit" required>
-        <input type="submit" value="Postaw">
-        <p>Do wygrania: <input id="possibleWin" name="possibleWin" readonly="readonly"/></p>
-        <p><a href="http://localhost:8080/matches">Powrót</a></p>
+        <input type="submit" id="confirmButton" value="Postaw">
+        <p id="prize">Do wygrania: <input id="possibleWin" name="possibleWin" readonly="readonly"/></p>
+        <p id="backParagraph"><a href="http://localhost:8080/matches" id="backButton">Powrót do wyboru meczy</a></p>
         <footer class="footer">
             <p>
                 <label for="couponNum">Numer kuponu:</label>

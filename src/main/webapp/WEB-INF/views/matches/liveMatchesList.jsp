@@ -6,34 +6,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="../static/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/scheduleStyle.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
+<body id="resultsSchedule">
 <div>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/privBet">PrivBet</a>
-            </div>
-            <ul class="nav navbar-nav m4-auto">
-                <li class="active"><a href="">Moje konto</a></li>
-                <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
-                <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
-            </ul>
-            <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
-            <button class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
-        </div>
-    </nav>
-    <h2>Harmonogram rozgrywek:</h2>
+    <%@ include file="../navigationPanel/navbar.jsp" %>
+    <h2 id="resultHeader">Wyniki</h2>
     <% int count =1;%>
     <c:forEach var="rounds" items="${rounds}">
         <table class="table .table-sm" id="schedule">
 
             <thead>
-            <tr id="roundCounter">Runda ${rounds.roundNumber}:</tr>
+            <tr id="roundCounter"><span id="counter">Runda ${rounds.roundNumber}:</span></tr>
             <tr>
-                <th scope="col" class="text-center">drużyna</th>
-                <th scope="col" class="text-center">&nbsp</th>
+                <th scope="col" class="text-center">Mecz</th>
+                <th scope="col" class="text-center">Wynik</th>
             </tr>
             </thead>
 

@@ -41,7 +41,7 @@ public class LoginFilter extends OncePerRequestFilter {
 
     private boolean allowedToEveryone(final String url) {
         if (url.endsWith("/user/register")
-                || url.endsWith("/user/login") || url.endsWith("/privBet")|| url.endsWith(".css")||url.endsWith(".png")) {
+                || url.endsWith("/user/login") || url.endsWith("/privBet")|| url.endsWith(".css")||url.endsWith(".png")|| url.endsWith(".js")) {
             return true;
         }
 

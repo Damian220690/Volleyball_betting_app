@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="../static/css/registrationStyle.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-<div class="container">
-    <div class="jumbotron" style="background-color:#9999ff">
+<div class="container" id="externalContainer">
+    <div class="jumbotron">
+        <div class="container">
         <form:form method="post" class="my-1" modelAttribute="user">
-            <div class="input-group mb-3 col-5">
+            <div class="input-group mb-3 col-sm-5">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Imię</span>
                 </div>
@@ -24,7 +26,7 @@
                             path="firstName"/>
                 <form:errors path="firstName"><span class="errors">To pole jest wymagane</span></form:errors>
             </div>
-            <div class="input-group mb-3 col-5">
+            <div class="input-group mb-3 col-sm-5">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Nazwisko</span>
                 </div>
@@ -32,7 +34,7 @@
                             path="lastName"/>
                 <form:errors path="lastName"><span class="errors">To pole jest wymagane</span></form:errors>
             </div>
-            <div class="input-group mb-3 col-5">
+            <div class="input-group mb-3 col-sm-5">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Email</span>
                 </div>
@@ -40,17 +42,17 @@
                 <form:errors path="email"><span class="errors">To pole jest wymagane</span></form:errors>
             </div>
             <div class="row">
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary ">
-                        <form:radiobutton path="gender" value="M" class="genderSelector" />Mężczyzna
+                <div class="btn-group btn-group-toggle mb-3 col-sm-5" data-toggle="buttons">
+                    <label class="btn" for="Male" id="maleLabel">
+                        <form:radiobutton path="gender" value="M" class="genderSelector" id="Male"/>Mężczyzna
                     </label>
-                    <label class="btn btn-secondary">
-                        <form:radiobutton path="gender" value="F" class="genderSelector"/>Kobieta
+                    <label class="btn " for="Female">
+                        <form:radiobutton path="gender" value="F" class="genderSelector" id="Female"/>Kobieta
                     </label>
                     <form:errors path="gender"><span class="errors">To pole jest wymagane</span></form:errors>
                 </div>
             </div>
-            <div class="input-group mb-3 col-5">
+            <div class="input-group mb-3 col-sm-5">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Nazwa użytkownika</span>
                 </div>
@@ -58,7 +60,7 @@
                 <form:errors path="userName"><span class="errors">To pole jest wymagane</span></form:errors>
             </div>
 
-            <div class="input-group mb-3 col-5">
+            <div class="input-group mb-3 col-sm-5">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Hasło</span>
                 </div>
@@ -66,15 +68,16 @@
                 <form:errors path="password"><span class="errors">To pole jest wymagane</span></form:errors>
             </div>
 
-            <div class="input-group mb-3 col-5">
+            <div class="input-group mb-3 col-sm-5">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Powtórz hasło</span>
                 </div>
                 <form:input type="password" id="con-password" path="repeatPassword"/>
                 <form:errors path="repeatPassword"><span id="conPassword" class="errors">To pole jest wymagane</span></form:errors>
             </div>
-            <button type="submit" id="sendButton" class="btn btn-primary">Agree and Join</button>
+            <button type="submit" id="sendButton" class="btn btn-primary">Zarejestruj</button>
         </form:form>
+        </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

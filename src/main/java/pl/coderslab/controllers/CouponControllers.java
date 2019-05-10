@@ -17,7 +17,7 @@ public class CouponControllers {
     @GetMapping("/matches")
     public String addCoupon(Model model){
         model.addAttribute("rounds", roundManager.getRounds());
-        return "/coupon/addCoupon";
+        return "/coupon/couponCreator";
     }
 
 }

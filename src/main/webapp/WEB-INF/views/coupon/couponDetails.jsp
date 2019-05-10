@@ -5,27 +5,15 @@
     <title>PrivBet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="../../static/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
+<body id="couponDetails">
+<%@ include file="../navigationPanel/navbar.jsp" %>
 <div>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/privBet">PrivBet</a>
-            </div>
-            <ul class="nav navbar-nav m4-auto">
-                <li class="active"><a href="">Moje konto</a></li>
-                <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
-                <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
-            </ul>
-            <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
-            <button id=" btn" class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
-        </div>
-    </nav>
-</div>
-<div>
-    <h2>Wybrane mecze:</h2>
+    <h2 id="selectedMatchesHeader">Wybrane mecze:</h2>
     <table class="table .table-sm" id="couponMatchList">
         <thead>
         <tr>
@@ -49,9 +37,10 @@
         </tbody>
     </table>
 </div>
-<p>Kurs: <span id="fullCourse">${fullCourse}</span></p>
-<p>Wkład: <span id="deposit">${deposit}</span></p>
-<p>Wygrana: <span id="possibleWin">${possibleWin}</span></p>
+<p><span class="detailsParagraph">Kurs: </span><span id="fullCourse">${fullCourse}</span></p>
+<p><span class="detailsParagraph">Wkład: </span><span id="depositField">${deposit}</span></p>
+<p><span class="detailsParagraph">Wygrana: </span><span id="possibleWinField">${possibleWin}</span></p>
+<p id="backParagraph"><a href="http://localhost:8080/user/coupons" id="backButton">Powrót</a></p>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

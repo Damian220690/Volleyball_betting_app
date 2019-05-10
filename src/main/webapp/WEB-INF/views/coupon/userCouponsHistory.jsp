@@ -6,23 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="../static/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/privBet">PrivBet</a>
-        </div>
-        <ul class="nav navbar-nav m4-auto">
-            <li class="active"><a href="#">Moje konto</a></li>
-            <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
-            <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
-        </ul>
-        <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
-        <button class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
-    </div>
-</nav>
+<body id="userCouponsHistory">
+<%@ include file="../navigationPanel/navbar.jsp" %>
 <div>
     <table class="table .table-sm" id="teamTable">
         <thead>
@@ -41,7 +31,7 @@
                 </td>
                 <td class="text-center">${coupon.couponsNumber}</td>
                 <td class="text-center">${coupon.deposit}</td>
-                <td class="text-center">${coupon.possibleWin}</td>
+                <td class="text-center" id="win${coupon.couponsNumber}">${coupon.possibleWin}</td>
                 <td class="text-center">
                     <a href="http://localhost:8080/user/coupons/${coupon.couponsNumber}">Szczegóły</a>
                 </td>

@@ -86,4 +86,39 @@ h4{
     background-color:#FFCC00;
     color:#333;
 }
+#couponCreator{
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+}
+#couponMatchesHeader{
+    font-family: 'Akronim', cursive;
+    font-size: 55px;
+    padding-left: 550px;
+}
+#roundCounter{
+    padding-left: 20px ;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+}
+#matchesTable{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+}
+#selectionButton{
+    text-decoration: none;
+    text-align: center;
+    color: #3cbabe;
+    border: 2px solid #3cbabe;
+    border-radius: 4px;
+    width: 100px;
+    line-height: 30px;
+    display: inline-block;
+    font-family: Arial;
+    font-weight: 600;
+}
 
+#selectionButton:hover{
+    background-color: #3cbabe;
+    color: #ffffff;
+    border-bottom: 2px solid #319598;
+}

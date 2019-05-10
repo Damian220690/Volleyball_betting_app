@@ -12,6 +12,7 @@ $(function () {
                 }
                 else if(details.couponStatus==="LOST"){
                     $("#" + details.couponNumber).attr("src", loserIcon);
+                    $("#win" + details.couponNumber).text("--");
                 }
             }
         });

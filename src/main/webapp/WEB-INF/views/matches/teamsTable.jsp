@@ -7,28 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link href="static/css/style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/privBet">PrivBet</a>
-        </div>
-        <ul class="nav navbar-nav m4-auto">
-            <li class="active"><a href="#">Moje konto</a></li>
-            <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
-            <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
-        </ul>
-        <ul class="nav navbar-nav m4-auto">
-            <li><i class="fa fa-money fa-4x" aria-hidden="true"></i></li>
-        </ul>
-        <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
-        <button class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
-    </div>
-</nav>
+<body id="leagueTable">
+<%@ include file="../navigationPanel/navbar.jsp" %>
 <div>
-    <h2 >Tabela ligi:</h2>
+    <h2 id="leagueHeader">Tabela ligi</h2>
     <table class="table .table-sm" id="teamTable">
         <thead>
         <tr>

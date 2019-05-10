@@ -24,7 +24,7 @@ public class LeagueTableController {
         User user = (User) session.getAttribute("loggedInUser");
         model.addAttribute("user", user);
         model.addAttribute("volleyballTeams", volleyballTeamRepository.findAllByOrderByMainPointsDescAndWinSetsDesc());
-        return "pagesAfterLogin/teamsTable";
+        return "matches/teamsTable";
     }
 
 

@@ -5,31 +5,19 @@
     <title>New coupon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href="../static/css/addCouponStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="../static/css/couponCreatorStyle.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<div>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/privBet">PrivBet</a>
-            </div>
-            <ul class="nav navbar-nav m4-auto">
-                <li class="active"><a href="">Moje konto</a></li>
-                <li class="active"><a href="http://localhost:8080/schedule">Harmonogram meczy</a></li>
-                <li class="active"><a href="http://localhost:8080/matches">Dodaj mecz</a></li>
-            </ul>
-            <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'">Kupon</button>
-            <button id=" btn" class="btn btn-danger navbar-btn " onclick="location.href='/privBet'">Logout</button>
-        </div>
-    </nav>
-</div>
+<body id="couponCreator">
+<%@ include file="../navigationPanel/navbar.jsp" %>
 <div class="roundsDiv">
-    <h2>Wybierz mecze:</h2>
+    <h2 id="couponMatchesHeader">Wybierz mecze:</h2>
     <c:forEach var="rounds" items="${rounds}">
-        <h4 class="roundCounter"><b>Runda ${rounds.roundNumber}</b></h4>
+        <h4 class="roundCounter"><span id="roundCounter">Runda ${rounds.roundNumber}</span></h4>
         <div class="roundDiv">
-            <table class="table .table-sm" id="schedule">
+            <table class="table .table-sm" id="matchesTable">
                 <thead>
                 <tr>
                     <th scope="col" class="text-center">mecz</th>
@@ -42,7 +30,7 @@
                 <tr>
                     <td class="text-center">${match}</td>
                     <td class="text-center">
-                        <button class="open">Wybierz </button>
+                        <button class="open" id="selectionButton">Wybierz </button>
                     </td>
                 </tr>
                 <tr class="t">

@@ -35,3 +35,86 @@
     padding: 0px;
     position: absolute;
 }
+
+#leagueHeader{
+    font-family: 'Akronim', cursive;
+    font-size: 55px;
+    padding-left: 500px;
+}
+
+#leagueTable, #resultsSchedule, #userCoupon, #userCouponsHistory, #couponDetails{
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+}
+#teamTable, #couponMatchList{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+#selectedRow{
+    background-color: #4caf50;
+    text-align: center;
+}
+#selectedMatchesHeader{
+    font-family: 'Akronim', cursive;
+    font-size: 55px;
+    padding-left: 550px;
+}
+#fullCourse, #course, #deposit,#depositLabel, #prize{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+}
+#deposit{
+    margin: 0 .25rem;
+    min-width: 125px;
+    border: 1px solid #eee;
+    border-left: 3px solid;
+    border-radius: 5px;
+    transition: border-color .5s ease-out;
+    background-color: #9999ff;
+}
+#confirmButton{
+    text-decoration: none;
+    text-align: center;
+    color: #3cbabe;
+    border: 2px solid #3cbabe;
+    border-radius: 4px;
+    width: 100px;
+    line-height: 30px;
+    display: inline-block;
+    font-family: Arial;
+    font-weight: 600;
+}
+
+#confirmButton:hover{
+    background-color: #3cbabe;
+    color: #ffffff;
+    border-bottom: 2px solid #319598;
+}
+#prize{
+    padding-top: 10px;
+}
+#possibleWin{
+    background-color: #9fb4f2;
+    text-align: center;
+}
+#backButton, #detailsParagraph{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 17px;
+}
+#backParagraph{
+    text-align: center;
+}
+.betDetails{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+#fullCourse, #depositField, #possibleWinField, .detailsParagraph{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+}
+.detailsParagraph{
+    color: #cc0033;
+}

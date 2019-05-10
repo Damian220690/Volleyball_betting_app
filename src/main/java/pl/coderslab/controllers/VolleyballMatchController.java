@@ -23,7 +23,7 @@ public class VolleyballMatchController {
     @GetMapping("/schedule")
     public String getMatchesSchedule(Model model) {
         model.addAttribute("rounds", roundManager.getRounds());
-        return "pagesAfterLogin/liveMatchesList";
+        return "matches/liveMatchesList";
     }
 
     @GetMapping("/api/schedule")
