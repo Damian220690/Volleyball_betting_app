@@ -66,7 +66,7 @@ public class VolleyballMatch extends Thread {
                 }
             }
         }
-        sleep(3);
+        sleep(1);
     }
 
 }

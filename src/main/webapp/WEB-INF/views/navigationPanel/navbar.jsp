@@ -10,6 +10,7 @@
         </div>
         <ul class="nav navbar-nav m4-auto">
             <li class="active"><a href="http://localhost:8080/schedule">Rozgrywki</a></li>
+            <li class="active"><a href="http://localhost:8080/teamsTable">Tabela ligi</a></li>
             <li class="active"><a href="http://localhost:8080/user/coupons">Kupony</a></li>
             <li class="active"><a href="http://localhost:8080/matches">Wybierz mecze</a></li>
         </ul>

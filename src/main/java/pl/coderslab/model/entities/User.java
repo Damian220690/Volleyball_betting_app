@@ -4,6 +4,8 @@ import org.mindrot.jbcrypt.BCrypt;
 import pl.coderslab.model.POJO.UserDto;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -11,7 +13,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Size(min = 2, max = 10)
     private String firstName;
+    @Size(min = 2, max = 15)
     private String lastName;
     @Column(unique = true)
     private String email;
