@@ -20,7 +20,6 @@ public class User {
     @Column(unique = true)
     private String email;
     private String gender;
-    @Column(unique = true)
     private String userName;
     private String hashedPassword;
     private double cash;

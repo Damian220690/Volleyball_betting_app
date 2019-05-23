@@ -42,11 +42,18 @@ public class UserController {
             model.addAttribute("user", user);
             return "user/registrationForm";
         }
-        User u = new User(user);
+        User userWithExistingEmail = this.userRepository.findByEmail(user.getEmail());
+        if(userWithExistingEmail==null) {
+            User u = new User(user);
+            this.userRepository.save(u);
 
-        this.userRepository.save(u);
-
-        return "redirect:/privBet";
+            return "redirect:/privBet";
+        }
+        else{
+            model.addAttribute("user", user);
+            model.addAttribute("msg", "Podany email jest już zajęty");
+            return "user/registrationForm";
+        }
     }
 
     @GetMapping("/login")
@@ -56,17 +63,19 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String processLogForm(UserDto loginData, Model m, HttpSession s){
+    public String processLogForm(UserDto loginData, Model model, HttpSession s){
         User user = this.userRepository.findByEmail(loginData.getEmail());
         if(user==null){
-            m.addAttribute("user", loginData);
-            m.addAttribute("msg", "User not found");
+            model.addAttribute("user", loginData);
+            model.addAttribute("msg", "Nie znaleziono użytkownika");
+//            m.addAttribute("msg", "User not found");
             return "user/loginForm";
         }
 
         if(!user.isPasswordCorrect(loginData.getPassword())){
-            m.addAttribute("user", loginData);
-            m.addAttribute("msg", "Wrong password");
+            model.addAttribute("user", loginData);
+            model.addAttribute("msg", "Niepoprawne hasło");
+//            model.addAttribute("msg", "Wrong password");
             return "user/loginForm";
         }
 

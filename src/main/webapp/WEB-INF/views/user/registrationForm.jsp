@@ -34,13 +34,17 @@
                                 path="lastName"/>
                     <form:errors path="lastName"><span class="errors">To pole jest wymagane</span></form:errors>
                 </div>
-                <div class="input-group mb-3 col-sm-5">
+                <div class="input-group mb-3 col-sm-5" id="formEmailDiv">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Email</span>
                     </div>
                     <form:input type="email" class="form-control" name="email" id="email" path="email"/>
-                    <form:errors path="email"><span class="errors">To pole jest wymagane</span></form:errors>
+                    <form:errors path="email"><span class="errors">To pole jest wymagane </span></form:errors>
                 </div>
+                <div id="emailDiv">
+                    <span class="errors" id="emailError">${msg}</span>
+                </div>
+
                 <div class="row">
                     <div class="btn-group btn-group-toggle mb-3 col-sm-5" data-toggle="buttons">
                         <label class="btn" for="Male" id="maleLabel">
