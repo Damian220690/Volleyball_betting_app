@@ -16,8 +16,12 @@
             <li class="active"><a href="http://localhost:8080/user/coupons">Kupony</a></li>
             <li class="active"><a href="http://localhost:8080/matches">Wybierz mecze</a></li>
             <div id="userDiv" style="display: flex; align-items:center; padding-left: 300px">
-                <i class="fas fa-user fa-3x"></i>
-                <span id="depositValue" style="font-size: 20px">&nbsp 200.0</span>
+                <div>
+                <i class="fas fa-user fa-3x" style="color: white"></i>
+                </div>
+                <div>
+                <span id="depositValue" style="font-size: 20px; color: white">&nbsp ${deposit}</span>
+                </div>
             </div>
         </ul>
 

@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2846e3b-639c-43bd-8171-c86ded2e7a6a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/DepositControllerAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/filters/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/filters/LoginFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navigationPanel/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navigationPanel/navbar.jsp" afterDir="false" />
@@ -23,7 +24,7 @@
     <session id="-369949902">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="48" />
+          <entry key="project.closed" value="49" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.105" value="1" />
           <entry key="project.open.time.14" value="1" />
@@ -37,7 +38,7 @@
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.54" value="2" />
-          <entry key="project.open.time.55" value="2" />
+          <entry key="project.open.time.55" value="3" />
           <entry key="project.open.time.57" value="2" />
           <entry key="project.open.time.58" value="4" />
           <entry key="project.open.time.59" value="3" />
@@ -56,7 +57,7 @@
           <entry key="project.open.time.90" value="2" />
           <entry key="project.open.time.91" value="1" />
           <entry key="project.open.time.95" value="1" />
-          <entry key="project.opened" value="51" />
+          <entry key="project.opened" value="52" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -64,7 +65,7 @@
           <entry key="class" value="23" />
           <entry key="css" value="39" />
           <entry key="html" value="3" />
-          <entry key="java" value="400" />
+          <entry key="java" value="406" />
           <entry key="jpg" value="1" />
           <entry key="js" value="61" />
           <entry key="jsp" value="178" />
@@ -81,7 +82,7 @@
           <entry key="CSS" value="39" />
           <entry key="HTML" value="3" />
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="400" />
+          <entry key="JAVA" value="406" />
           <entry key="JSP" value="178" />
           <entry key="JavaScript" value="61" />
           <entry key="Markdown" value="1" />
@@ -95,9 +96,9 @@
           <entry key="css" value="3672" />
           <entry key="dummy" value="30" />
           <entry key="html" value="3" />
-          <entry key="java" value="22626" />
+          <entry key="java" value="22827" />
           <entry key="js" value="4464" />
-          <entry key="jsp" value="6450" />
+          <entry key="jsp" value="6527" />
           <entry key="md" value="726" />
           <entry key="properties" value="35" />
           <entry key="sql" value="75" />
@@ -108,8 +109,8 @@
         <counts>
           <entry key="CSS" value="3672" />
           <entry key="HTML" value="3" />
-          <entry key="JAVA" value="22626" />
-          <entry key="JSP" value="6450" />
+          <entry key="JAVA" value="22827" />
+          <entry key="JSP" value="6527" />
           <entry key="JavaScript" value="4464" />
           <entry key="Markdown" value="726" />
           <entry key="PLAIN_TEXT" value="30" />
@@ -125,21 +126,33 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navigationPanel/navbar.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="17" column="92" selection-start-line="17" selection-start-column="92" selection-end-line="17" selection-end-column="92" />
+            <state relative-caret-position="217">
+              <caret line="22" column="84" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/matches/teamsTable.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="73" />
+            <state relative-caret-position="216">
+              <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/DepositControllerAdvice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,8 +160,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/filters/LoginFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+            <state>
+              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -160,10 +173,10 @@
       <list>
         <option value="HTML File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -180,8 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/model/POJO/RoundManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/model/POJO/RoundsRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/model/entities/VolleyballTeam.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/repositories/VolleyballTeamRepository.java" />
@@ -225,11 +236,13 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/model/entities/Coupon.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/model/entities/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/checkPasswords.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/registrationForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/registrationStyle.css" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/UserDepositController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/filters/LoginFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/DepositControllerAdvice.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navigationPanel/navbar.jsp" />
       </list>
     </option>
@@ -265,7 +278,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -335,16 +350,6 @@
               <item name="coderslab" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Volleyball_betting_app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Volleyball_betting_app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="coderslab" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="POJO" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Volleyball_betting_app" type="b2602c69:ProjectViewProjectNode" />
@@ -466,15 +471,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557529980304" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558724269620" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -648,12 +651,13 @@
       <workItem from="1557990868576" duration="7139000" />
       <workItem from="1558265669675" duration="4912000" />
       <workItem from="1558378171967" duration="620000" />
-      <workItem from="1558635057628" duration="12002000" />
+      <workItem from="1558635057628" duration="12074000" />
+      <workItem from="1558721059829" duration="3205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="496816000" />
+    <option name="totallyTimeSpent" value="500093000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -668,7 +672,7 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32960895" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33519554" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -686,7 +690,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.26264274" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.20717782" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.19412725" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.19349593" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32952693" />
@@ -712,20 +716,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/userCoupon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/userAccount.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="30" column="98" selection-start-line="30" selection-start-column="98" selection-end-line="30" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/images/privBetBackground.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -740,13 +730,6 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/images/field.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/matchProgress.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -765,13 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/CouponCartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -800,13 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="42" column="11" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/UserAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -983,13 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/css/registrationStyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
@@ -1032,27 +994,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/filters/LoginFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state relative-caret-position="261">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/CouponCartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="102" column="5" lean-forward="true" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/matches/teamsTable.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="73" />
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/UserDepositController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/UserAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/filters/LoginFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="77" column="44" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controllers/DepositControllerAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navigationPanel/navbar.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="17" column="92" selection-start-line="17" selection-start-column="92" selection-end-line="17" selection-end-column="92" />
+        <state relative-caret-position="217">
+          <caret line="22" column="84" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
