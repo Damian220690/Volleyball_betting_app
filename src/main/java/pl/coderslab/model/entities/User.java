@@ -34,7 +34,7 @@ public class User {
         this.gender = userDto.getGender();
         this.userName = userDto.getUserName();
         setPassword(userDto.getPassword());
-        this.cash = 200.0;
+        this.cash = 200.00;
     }
 
 

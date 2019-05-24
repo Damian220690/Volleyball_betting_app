@@ -2,17 +2,16 @@ package pl.coderslab.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.POJO.Cart;
 import pl.coderslab.model.POJO.Round;
 import pl.coderslab.model.POJO.RoundManager;
 import pl.coderslab.model.entities.Coupon;
+import pl.coderslab.model.entities.MatchProgress;
 import pl.coderslab.model.entities.User;
 import pl.coderslab.repositories.CouponRepository;
 import pl.coderslab.repositories.RoundDao;
+import pl.coderslab.repositories.UserRepository;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashSet;
@@ -33,6 +32,9 @@ public class CouponCartController {
 
     @Autowired
     CouponRepository couponRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @GetMapping("/coupon")
     public String getCoupon(HttpSession session) {
@@ -89,16 +91,25 @@ public class CouponCartController {
             Coupon coupon = new Coupon(couponNumber, cart.getMatch(), cart.getChoice(), deposit, possibleWin, user);
             couponRepository.save(coupon);
         }
-//        if(user.getCash() > deposit) {
-//            user.setCash(user.getCash() - deposit);
-//        }
-//        else{
+        if (user.getCash() > deposit) {
+            double roundedDeposit = Math.floor((user.getCash() - deposit) * 100) / 100;
+            user.setCash(roundedDeposit);
+        }
+//        else if (user.getCash() > 1) {
 //            // when cash smaller than couponDeposit set max value on the form input to cash value
 //        }
         String newUUID = String.valueOf(UUID.randomUUID());
-//        session.setAttribute("loggedInUser", user);
-//        System.out.println(user.getCash());
+        session.setAttribute("loggedInUser", user);
+        userRepository.save(user);
         session.setAttribute("couponNumber", newUUID);
         return "/coupon/userCoupon";
     }
+
+    @GetMapping("/api/coupon")
+    @ResponseBody
+    public double getDepositValue(HttpSession session) {
+        User user = (User) session.getAttribute("loggedInUser");
+        return user.getCash();
+    }
+
 }

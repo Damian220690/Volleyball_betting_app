@@ -13,6 +13,7 @@
     <link href="/../../../../static/css/userCouponStyle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body id="userCoupon">
+<%@ include file="../navigationPanel/navbar.jsp" %>
 <div>
     <form method="post">
         <h2 id="selectedMatchesHeader">Wybrane mecze:</h2>

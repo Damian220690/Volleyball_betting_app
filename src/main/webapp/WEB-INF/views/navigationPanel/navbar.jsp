@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title></title>
@@ -20,7 +21,7 @@
                 <i class="fas fa-user fa-3x" style="color: white"></i>
                 </div>
                 <div>
-                <span id="depositValue" style="font-size: 20px; color: white">&nbsp ${deposit}</span>
+                <span id="depositValue" style="font-size: 20px; color: white; padding-left: 10px"><fmt:formatNumber value="${deposit}" minFractionDigits="2" maxFractionDigits="2"/></span>
                 </div>
             </div>
         </ul>
