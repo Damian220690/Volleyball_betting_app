@@ -125,7 +125,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navigationPanel/navbar.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -164,7 +164,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/userCoupon.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -493,7 +493,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558734999110" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558735230197" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -668,12 +668,12 @@
       <workItem from="1558265669675" duration="4912000" />
       <workItem from="1558378171967" duration="620000" />
       <workItem from="1558635057628" duration="12074000" />
-      <workItem from="1558721059829" duration="12688000" />
+      <workItem from="1558721059829" duration="12945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="509576000" />
+    <option name="totallyTimeSpent" value="509833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,9 +686,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33519554" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33519554" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -700,13 +699,13 @@
       <window_info id="Persistence" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32952693" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38499185" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38499185" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.109298535" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.26264274" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.20717782" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.19249593" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19249593" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32952693" />
@@ -1051,13 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/userCoupon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/coupon/userCoupon.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10">
@@ -1079,6 +1071,13 @@
           <folding>
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/static/js/userCoupon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
         </state>
       </provider>
     </entry>
