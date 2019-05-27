@@ -95,9 +95,10 @@ public class CouponCartController {
             double roundedDeposit = Math.floor((user.getCash() - deposit) * 100) / 100;
             user.setCash(roundedDeposit);
         }
-//        else if (user.getCash() > 1) {
-//            // when cash smaller than couponDeposit set max value on the form input to cash value
-//        }
+        else if (user.getCash() < deposit) {
+
+            // when cash smaller than couponDeposit set max value on the form input to cash value
+        }
         String newUUID = String.valueOf(UUID.randomUUID());
         session.setAttribute("loggedInUser", user);
         userRepository.save(user);

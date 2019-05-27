@@ -42,7 +42,7 @@
 
         <p id="course">Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
         <label id="depositLabel"for="deposit">Stawka</label>
-        <input type="number" min="2" max="5000" step=".01" id="deposit" name="deposit" required>
+        <input type="number" min="2" step=".01" id="deposit" name="deposit" required>
         <input type="submit" id="confirmButton" value="Postaw">
         <p id="prize">Do wygrania: <input id="possibleWin" name="possibleWin" readonly="readonly"/></p>
         <p id="backParagraph"><a href="http://localhost:8080/matches" id="backButton">Powrót do wyboru meczy</a></p>
