@@ -1,7 +1,6 @@
 package pl.coderslab.model.POJO;
 
 
-import org.springframework.stereotype.Component;
 import pl.coderslab.model.entities.MatchProgress;
 import pl.coderslab.repositories.MatchesProgressRepository;
 import pl.coderslab.repositories.VolleyballTeamRepository;

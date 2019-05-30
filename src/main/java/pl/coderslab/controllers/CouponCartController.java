@@ -4,14 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.POJO.Cart;
+import pl.coderslab.model.POJO.CourseCalculator;
 import pl.coderslab.model.POJO.Round;
 import pl.coderslab.model.POJO.RoundManager;
 import pl.coderslab.model.entities.Coupon;
 import pl.coderslab.model.entities.MatchProgress;
 import pl.coderslab.model.entities.User;
+import pl.coderslab.model.entities.VolleyballTeam;
 import pl.coderslab.repositories.CouponRepository;
 import pl.coderslab.repositories.RoundDao;
 import pl.coderslab.repositories.UserRepository;
+import pl.coderslab.repositories.VolleyballTeamRepository;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashSet;
@@ -36,6 +39,12 @@ public class CouponCartController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    VolleyballTeamRepository volleyballTeamRepository;
+
+    @Autowired
+    CourseCalculator courseCalculator;
+
     @GetMapping("/coupon")
     public String getCoupon(HttpSession session) {
         return "/coupon/userCoupon";
@@ -48,6 +57,20 @@ public class CouponCartController {
         String match = RoundDao.findMatchInSpecificRound(rounds, roundNumber, matchNumber);
         Set<Cart> selectedMatches = (HashSet<Cart>) session.getAttribute("selectedMatches");
         String uuid;
+        double betCourse = 0;
+
+        List<VolleyballTeam> orderedLeagueTable = volleyballTeamRepository.findAllByOrderByMainPointsDescAndWinSetsDesc();
+        String[] teams = match.split("-");
+        String selectedTeam = teams[choice - 1].trim();
+        for (int i = 0; i < orderedLeagueTable.size(); i++) {
+            orderedLeagueTable.get(i).setPlaceInTable(i + 1);
+        }
+
+        for (VolleyballTeam team : orderedLeagueTable) {
+            if (team.getTeamMembers().equals(selectedTeam)) {
+                betCourse = courseCalculator.calculateCourse((int) team.getPlaceInTable());
+            }
+        }
         if (selectedMatches == null || selectedMatches.size() == 0) {
             if (session.getAttribute("couponNumber") == null) {
                 uuid = String.valueOf(UUID.randomUUID());
@@ -58,16 +81,19 @@ public class CouponCartController {
 
             fullCourse = 1;
             idCounter = 0;
-            cart = new Cart(idCounter++, match, 2.0, choice);
+
+//            double typeCourse =
+
+            cart = new Cart(idCounter++, match, betCourse, choice);
             selectedMatches = new HashSet<>();
             selectedMatches.add(cart);
 
         } else {
-            cart = new Cart(idCounter++, match, 2.0, choice);
+            cart = new Cart(idCounter++, match, betCourse, choice);
             selectedMatches.add(cart);
         }
         fullCourse *= cart.getSingleCourse();
-        session.setAttribute("fullCourse", fullCourse);
+        session.setAttribute("fullCourse", Math.floor((fullCourse * 100)) / 100);
         session.setAttribute("selectedMatches", selectedMatches);
         return "/coupon/userCoupon";
     }
@@ -94,10 +120,6 @@ public class CouponCartController {
         if (user.getCash() > deposit) {
             double roundedDeposit = Math.floor((user.getCash() - deposit) * 100) / 100;
             user.setCash(roundedDeposit);
-        }
-        else if (user.getCash() < deposit) {
-
-            // when cash smaller than couponDeposit set max value on the form input to cash value
         }
         String newUUID = String.valueOf(UUID.randomUUID());
         session.setAttribute("loggedInUser", user);

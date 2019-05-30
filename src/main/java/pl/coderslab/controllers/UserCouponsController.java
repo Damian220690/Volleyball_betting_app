@@ -116,7 +116,7 @@ public class UserCouponsController {
         List<Coupon> chosenCoupons = couponRepository.findAllByCouponsNumber(couponNumber);
         double possibleWin = chosenCoupons.get(chosenCoupons.size() - 1).getPossibleWin();
         double deposit = chosenCoupons.get(chosenCoupons.size() - 1).getDeposit();
-        double fullCourse = possibleWin / deposit;
+        double fullCourse = Math.floor((possibleWin * 100) / deposit) / 100;
 
         CouponDetails couponDetails = new CouponDetails();
         List<CouponDetails> fullDetailsAboutCouponMatch = couponDetails.getInitialDetailsAboutCouponMatch(chosenCoupons);
