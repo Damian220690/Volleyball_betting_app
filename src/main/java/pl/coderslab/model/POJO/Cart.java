@@ -61,13 +61,19 @@ public class Cart {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return getMatch().hashCode();
     }
 
-    // napisać equalsa
+
     @Override
     public boolean equals(Object obj) {
-        this.getMatch().equals(obj);
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof Cart) {
+            Cart cart = (Cart) obj;
+            return this.getMatch().equals(cart.getMatch());
+        }
         return false;
     }
 }

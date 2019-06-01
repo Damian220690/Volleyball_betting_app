@@ -58,6 +58,7 @@ public class CouponCartController {
         Set<Cart> selectedMatches = (HashSet<Cart>) session.getAttribute("selectedMatches");
         String uuid;
         double betCourse = 0;
+        fullCourse = 1;
 
         List<VolleyballTeam> orderedLeagueTable = volleyballTeamRepository.findAllByOrderByMainPointsDescAndWinSetsDesc();
         String[] teams = match.split("-");
@@ -78,11 +79,7 @@ public class CouponCartController {
             } else {
                 uuid = (String) session.getAttribute("couponNumber");
             }
-
-            fullCourse = 1;
             idCounter = 0;
-
-//            double typeCourse =
 
             cart = new Cart(idCounter++, match, betCourse, choice);
             selectedMatches = new HashSet<>();
@@ -90,10 +87,21 @@ public class CouponCartController {
 
         } else {
             cart = new Cart(idCounter++, match, betCourse, choice);
-            selectedMatches.add(cart);
+            if (selectedMatches.contains(cart)) {
+                for (Cart c : selectedMatches) {
+                    if (c.getMatch().equals(cart.getMatch())) {
+                        c.setChoice(cart.getChoice());
+                        c.setSingleCourse(cart.getSingleCourse());
+                    }
+                }
+            } else {
+                selectedMatches.add(cart);
+            }
         }
-        fullCourse *= cart.getSingleCourse();
-        session.setAttribute("fullCourse", Math.floor((fullCourse * 100)) / 100);
+        for(Cart c : selectedMatches){
+            fullCourse *= c.getSingleCourse();
+        }
+        session.setAttribute("fullCourse", Math.ceil((fullCourse * 100)) / 100);
         session.setAttribute("selectedMatches", selectedMatches);
         return "/coupon/userCoupon";
     }
