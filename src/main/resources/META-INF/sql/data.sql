@@ -30,3 +30,9 @@ INSERT INTO volleyballTeams(placeInTable, numberOfMatches, teamMembers, mainPoin
 
 INSERT INTO volleyballTeams(placeInTable, numberOfMatches, teamMembers, mainPoints, winSets, lostSets) VALUES (16, 0, "Wojciech Biały / Dominik Kaliszewski", 0, 0, 0);
 
+
+INSERT INTO users(email,firstName,gender,hashedPassword,lastName,userName,cash) values ('Test@gmail.com','Damian','M', '$2a$10$p92U3AlZNsO.GAYJ2H.vT.ftHT6WQlGBJpMeGqmkZxlU5nY46fNM2', 'Nieweglowski','Sandro',500);
+
+-- Test@gmail.com
+-- test11
+

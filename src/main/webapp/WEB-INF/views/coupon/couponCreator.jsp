@@ -8,14 +8,16 @@
     <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="tooltipster/dist/css/tooltipster.bundle.min.css" />
+    <script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
     <link href="../static/css/couponCreatorStyle.css" rel="stylesheet" type="text/css"/>
 </head>
 <body id="couponCreator">
 <%@ include file="../navigationPanel/navbar.jsp" %>
 <div class="roundsDiv">
     <h2 id="couponMatchesHeader">Wybierz mecze:</h2>
-    <c:forEach var="rounds" items="${rounds}">
-        <h4 class="roundCounter"><span id="roundCounter">Runda ${rounds.roundNumber}</span></h4>
+    <c:forEach var="round" items="${rounds}">
+        <h4 class="roundCounter" title="This is my image's tooltip message!" ><span id="roundCounter">Runda ${round.roundNumber}</span></h4>
         <div class="roundDiv">
             <table class="table .table-sm" id="matchesTable">
                 <thead>
@@ -25,19 +27,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                <% int count =1;%>
-                <c:forEach var="match" items="${rounds.match}">
+                <% int count = 1;%>
+                <c:forEach var="match" items="${round.match}">
                 <tr>
-                    <td class="text-center">${match}</td>
+                    <td class="text-center" data-match="${match}" data-status=" ">${match}</td>
                     <td class="text-center">
-                        <button class="open" id="selectionButton">Wybierz </button>
+                        <button class="open" id="selectionButton">Wybierz</button>
                     </td>
                 </tr>
                 <tr class="t">
                     <td class="options">
                         <div id="betOptions">
-                            <label class="firstTeam"><input type="radio" name="toggle" value="${rounds.roundNumber}/<%= count%>/1"><span>1</span></label>
-                            <label class="secondTeam"><input type="radio" name="toggle" value="${rounds.roundNumber}/<%= count%>/2"><span>2</span></label>
+                            <label class="firstTeam"><input type="radio" name="toggle"
+                                                            value="${round.roundNumber}/<%= count%>/1"><span>1</span></label>
+                            <label class="secondTeam"><input type="radio" name="toggle"
+                                                             value="${round.roundNumber}/<%= count%>/2"><span>2</span></label>
                             <%= count++ %>
                         </div>
                     </td>
