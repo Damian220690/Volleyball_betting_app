@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="tooltipster/dist/css/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="tooltipster/dist/css/tooltipster.bundle.min.css"/>
     <script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
     <link href="../static/css/couponCreatorStyle.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -17,8 +17,10 @@
 <div class="roundsDiv">
     <h2 id="couponMatchesHeader">Wybierz mecze:</h2>
     <c:forEach var="round" items="${rounds}">
-        <h4 class="roundCounter" title="This is my image's tooltip message!" ><span id="roundCounter">Runda ${round.roundNumber}</span></h4>
-        <div class="roundDiv">
+        <h4 class="roundCounter" data-toggle="tooltip"><span class="roundSpan"
+                                                             id="roundSpan${round.roundNumber}">Round ${round.roundNumber}</span>
+        </h4>
+        <div class="roundDiv" id="div ${round.roundNumber}">
             <table class="table .table-sm" id="matchesTable">
                 <thead>
                 <tr>

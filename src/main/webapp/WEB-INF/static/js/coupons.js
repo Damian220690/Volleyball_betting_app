@@ -29,12 +29,17 @@ $(function () {
                 $('td[data-match= "' + matchNameFromResponse + '"]').attr('data-status', matchProgress.matchStatus);
 
                 if ((tdWithMatchName.attr('data-status') === 'LIVE') || (tdWithMatchName.attr('data-status') === '2 WINNER') || (tdWithMatchName.attr('data-status') === '1 WINNER')) {
-                    $('td[data-match= "' + matchNameFromResponse + '"]').parent().parent().parent().parent().parent().children().eq(1).attr('style', 'background-color: #ff7370');
-                    $('td[data-match= "' + matchNameFromResponse + '"]').next().children().attr("disabled", true);
+                    var divId = $('td[data-match= "' + matchNameFromResponse + '"]').parent().parent().parent().parent().attr('id');
+                    var idArr = divId.split(" ");
+                    var roundCounterHeader = $('#roundSpan'+ idArr[1]).parent();
+                    roundCounterHeader.attr('style', 'background-color: #ff7370');
+
+                    roundCounterHeader.attr("title", "Betting in this round has been blocked");
+                    roundCounterHeader.off('click');
                 }
             }
         });
     }, 200);
 
-    // $('.roundCounter').tooltipster();
+    $('.roundCounter').tooltip();
 });

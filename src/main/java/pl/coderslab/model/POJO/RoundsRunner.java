@@ -19,11 +19,11 @@ public class RoundsRunner {
         new Thread(() -> {
             List<Round> rounds = roundManager.getRounds();
             for (Round round : rounds) {
-                try {
-                    TimeUnit.SECONDS.sleep(30);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    TimeUnit.SECONDS.sleep(30);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
                 round.start();
                 try {
                     round.getQueue().take();

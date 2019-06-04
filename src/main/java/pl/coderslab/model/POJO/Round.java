@@ -46,11 +46,11 @@ public class Round extends Thread {
         }
         queue.add("round finished");
 
-        try {
-            TimeUnit.SECONDS.sleep(30);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            TimeUnit.SECONDS.sleep(30);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public List<VolleyballMatch> getVolleyballMatches() {

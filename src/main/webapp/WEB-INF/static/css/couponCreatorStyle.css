@@ -95,7 +95,7 @@ h4{
     font-size: 55px;
     padding-left: 550px;
 }
-#roundCounter{
+.roundSpan{
     padding-left: 20px ;
     font-family: 'Permanent Marker', cursive;
     font-size: 30px;
