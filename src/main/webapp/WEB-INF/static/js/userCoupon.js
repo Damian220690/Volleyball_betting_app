@@ -17,4 +17,7 @@ $(function () {
             $('#deposit').attr('max', depositRange);
         });
     }, 1000);
+    $("#cleaningButton").click(function(){
+        $("tbody").empty();
+    });
 });

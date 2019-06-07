@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="../../../../../static/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="/../../../../static/css/userCouponStyle.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -23,7 +24,8 @@
                 <th scope="col" class="text-center">mecz</th>
                 <th scope="col" class="text-center">kurs</th>
                 <th scope="col" class="text-center">wybór</th>
-                <th scope="col" class="text-center">&nbsp</th>
+                <th scope="col" class="text-center"><button id="cleaningButton" onclick="location.href='http://localhost:8080/coupon/deleteAll';">
+                <i class="fas fa-trash-alt fa-1x"></i></button></th>
             </tr>
             </thead>
             <tbody>

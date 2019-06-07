@@ -143,4 +143,12 @@ public class CouponCartController {
         return user.getCash();
     }
 
+    @GetMapping("/coupon/deleteAll")
+    public String removeAllMatchesFromCart(HttpSession session){
+        Set<Cart> selectedMatches = (HashSet<Cart>) session.getAttribute("selectedMatches");
+        selectedMatches.clear();
+        session.setAttribute("selectedMatches",selectedMatches);
+        return "/coupon/userCoupon";
+    }
+
 }
