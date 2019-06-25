@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
     <link href="../../../../../static/css/style.css" rel="stylesheet" type="text/css"/>
     <link href="/../../../../static/css/userCouponStyle.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -24,7 +25,8 @@
                 <th scope="col" class="text-center">mecz</th>
                 <th scope="col" class="text-center">kurs</th>
                 <th scope="col" class="text-center">wybór</th>
-                <th scope="col" class="text-center"><button id="cleaningButton" onclick="location.href='http://localhost:8080/coupon/deleteAll';">
+                <th scope="col" class="text-center"><button id="cleaningButton" onclick="location.href='http://localhost:8080/coupon/deleteAll'"
+                                                            data-toggle="tooltip" title="Remove all bets" >
                 <i class="fas fa-trash-alt fa-1x"></i></button></th>
             </tr>
             </thead>

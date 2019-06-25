@@ -8,7 +8,6 @@ import pl.coderslab.model.POJO.CourseCalculator;
 import pl.coderslab.model.POJO.Round;
 import pl.coderslab.model.POJO.RoundManager;
 import pl.coderslab.model.entities.Coupon;
-import pl.coderslab.model.entities.MatchProgress;
 import pl.coderslab.model.entities.User;
 import pl.coderslab.model.entities.VolleyballTeam;
 import pl.coderslab.repositories.CouponRepository;
@@ -145,9 +144,11 @@ public class CouponCartController {
 
     @GetMapping("/coupon/deleteAll")
     public String removeAllMatchesFromCart(HttpSession session){
+        fullCourse = 0;
         Set<Cart> selectedMatches = (HashSet<Cart>) session.getAttribute("selectedMatches");
         selectedMatches.clear();
         session.setAttribute("selectedMatches",selectedMatches);
+        session.setAttribute("fullCourse", fullCourse);
         return "/coupon/userCoupon";
     }
 
