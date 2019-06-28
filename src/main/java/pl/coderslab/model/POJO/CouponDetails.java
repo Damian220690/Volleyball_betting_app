@@ -15,9 +15,10 @@ public class CouponDetails {
     private String matchStatus;
     private CouponStatus couponStatus;
     private String couponNumber;
+    private double possibleWin;
 
 
-    public CouponDetails(long matchId, String match, int matchType, int setTeam1, int setTeam2, String matchStatus,String couponNumber) {
+    public CouponDetails(long matchId, String match, int matchType, int setTeam1, int setTeam2, String matchStatus,String couponNumber,double possibleWin) {
         this.matchId = matchId;
         this.match = match;
         this.matchType = matchType;
@@ -25,6 +26,7 @@ public class CouponDetails {
         this.setTeam2 = setTeam2;
         this.matchStatus = matchStatus;
         this.couponNumber = couponNumber;
+        this.possibleWin = possibleWin;
     }
 
     public CouponDetails() {
@@ -41,7 +43,7 @@ public class CouponDetails {
                 if (team1.equals(matchProgress.getTeam1()) && team2.equals(matchProgress.getTeam2())) {
                     {
                         fullDetailsAboutCouponMatch.add(new CouponDetails(coupon.getId(), coupon.getMatches(), coupon.getMatchType(),
-                                matchProgress.getSetsTeam1(), matchProgress.getSetsTeam2(), matchProgress.getMatchStatus(), coupon.getCouponsNumber()));
+                                matchProgress.getSetsTeam1(), matchProgress.getSetsTeam2(), matchProgress.getMatchStatus(), coupon.getCouponsNumber(),coupon.getPossibleWin()));
                     }
                 }
             }
@@ -52,7 +54,7 @@ public class CouponDetails {
     public List<CouponDetails> getInitialDetailsAboutCouponMatch(List<Coupon> coupons) {
         List<CouponDetails> initialDetailsAboutCouponMatch = new ArrayList<>();
         for (Coupon coupon : coupons) {
-            initialDetailsAboutCouponMatch.add(new CouponDetails(coupon.getId(), coupon.getMatches(), coupon.getMatchType(), 0, 0, "FUTURE",coupon.getCouponsNumber()));
+            initialDetailsAboutCouponMatch.add(new CouponDetails(coupon.getId(), coupon.getMatches(), coupon.getMatchType(), 0, 0, "FUTURE",coupon.getCouponsNumber(), coupon.getPossibleWin()));
         }
         return initialDetailsAboutCouponMatch;
     }
@@ -70,7 +72,7 @@ public class CouponDetails {
                 if (team1.equals(matchProgress.getTeam1()) && team2.equals(matchProgress.getTeam2())) {
                     detailsAboutCoupon.add(new CouponDetails(coupon.getId(), coupon.getMatches(), coupon.getMatchType(),
                                 matchProgress.getSetsTeam1(), matchProgress.getSetsTeam2(), matchProgress.getMatchStatus(),
-                                coupon.getCouponsNumber()));
+                                coupon.getCouponsNumber(),coupon.getPossibleWin()));
                         if (matchProgress.getMatchStatus().equals("1 WINNER") && coupon.getMatchType() == 2) {
                             detailsAboutCoupon.get(detailsAboutCoupon.size() - 1).setCouponStatus(CouponStatus.LOST);
                         } else if (matchProgress.getMatchStatus().equals("2 WINNER") && coupon.getMatchType() == 1) {
@@ -118,6 +120,7 @@ public class CouponDetails {
                 ", matchStatus='" + matchStatus + '\'' +
                 ", couponStatus=" + couponStatus +
                 ", couponNumber='" + couponNumber + '\'' +
+                ", possibleWin=" + possibleWin +
                 '}';
     }
 
@@ -185,6 +188,11 @@ public class CouponDetails {
         this.couponNumber = couponNumber;
     }
 
+    public double getPossibleWin() {
+        return possibleWin;
+    }
 
-
+    public void setPossibleWin(double possibleWin) {
+        this.possibleWin = possibleWin;
+    }
 }

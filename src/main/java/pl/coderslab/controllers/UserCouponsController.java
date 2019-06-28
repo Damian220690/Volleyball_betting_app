@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.model.POJO.CouponChecker;
 import pl.coderslab.model.POJO.CouponDetails;
 import pl.coderslab.model.POJO.CouponStatus;
+import pl.coderslab.model.POJO.CouponsContainer;
 import pl.coderslab.model.entities.Coupon;
 import pl.coderslab.model.entities.MatchProgress;
 import pl.coderslab.model.entities.User;
@@ -29,6 +30,9 @@ public class UserCouponsController {
 
     @Autowired
     MatchesProgressRepository matchesProgressRepository;
+
+    @Autowired
+    CouponsContainer couponsContainer;
 
     @GetMapping("/user/coupons")
     public String getUsersCoupons(Model model) {
@@ -67,16 +71,15 @@ public class UserCouponsController {
             String couponNumber = coupon.getCouponsNumber();
             List<Coupon> allByCouponsNumber = couponRepository.findAllByCouponsNumber(couponNumber);
             List<CouponDetails> infoAboutUserCoupons = couponDetails.getInfoAboutUserCoupons(allByCouponsNumber, allMatchesProgress);
-            for(CouponDetails detail : infoAboutUserCoupons){
-                    statuses.add(detail.getCouponStatus());
+            for (CouponDetails detail : infoAboutUserCoupons) {
+                statuses.add(detail.getCouponStatus());
             }
             if (!statuses.contains(null) && !statuses.contains(CouponStatus.LOST)) {
+                value = coupon.getPossibleWin();
                 for (CouponDetails detail : infoAboutUserCoupons) {
                     detail.setCouponStatus(CouponStatus.WON);
                 }
-                value = coupon.getPossibleWin();
-            }
-            else if (statuses.contains(CouponStatus.LOST)) {
+            } else if (statuses.contains(CouponStatus.LOST)) {
                 for (CouponDetails detail : infoAboutUserCoupons) {
                     detail.setCouponStatus(CouponStatus.LOST);
                 }
@@ -89,13 +92,18 @@ public class UserCouponsController {
                     couponsWithoutDuplicates.add(coupon);
                 }
             }
-
         }
-//        user.setCash(user.getCash() + value);
-//        session.setAttribute("loggedInUser",user);
-//        System.out.println("value: "+ value);
-//        System.out.println("user "+user.getCash());
+
         List<CouponDetails> infoAboutUserCoupons = couponDetails.getInfoAboutUserCoupons(couponsWithoutDuplicates, allMatchesProgress);
+        HashMap<String, Double> winningsValue = couponsContainer.getWinningsValue();
+        for (CouponDetails detail : infoAboutUserCoupons) {
+            if (detail.getCouponStatus().equals(CouponStatus.WON)) {
+                if (!winningsValue.containsKey(detail.getCouponNumber())) {
+                    winningsValue.put(detail.getCouponNumber(), value);
+                }
+            }
+        }
+
         model.addAttribute("coupons", infoAboutUserCoupons);
         return infoAboutUserCoupons;
     }

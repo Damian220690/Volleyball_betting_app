@@ -98,6 +98,7 @@ public class Coupon {
         this.id = id;
     }
 
+
     @Override
     public String toString() {
         return "Coupon{" +
