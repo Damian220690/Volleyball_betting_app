@@ -38,7 +38,7 @@
     </table>
 </div>
 <p><span class="detailsParagraph">Kurs: </span><span id="fullCourse">${fullCourse}</span></p>
-<p><span class="detailsParagraph">Wkład: </span><span id="depositField">${deposit}</span></p>
+<p><span class="detailsParagraph">Wkład: </span><span id="depositField">${couponDeposit}</span></p>
 <p><span class="detailsParagraph">Wygrana: </span><span id="possibleWinField">${possibleWin}</span></p>
 <p id="backParagraph"><a href="http://localhost:8080/user/coupons" id="backButton">Powrót</a></p>
 

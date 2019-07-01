@@ -130,7 +130,7 @@ public class UserCouponsController {
         List<CouponDetails> fullDetailsAboutCouponMatch = couponDetails.getInitialDetailsAboutCouponMatch(chosenCoupons);
         model.addAttribute("fullDetailsAboutCouponMatch", fullDetailsAboutCouponMatch);
         model.addAttribute("fullCourse", fullCourse);
-        model.addAttribute("deposit", deposit);
+        model.addAttribute("couponDeposit", deposit);
         model.addAttribute("possibleWin", possibleWin);
         return "coupon/couponDetails";
     }
