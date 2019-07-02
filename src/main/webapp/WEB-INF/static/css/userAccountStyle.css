@@ -1,0 +1,18 @@
+#mainParagraph{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    padding-left: 570px;
+}
+#userAccount{
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+}
+.boostBox{
+    margin-left: 10px;
+}
+.input-group{
+    width: 300px;
+    left: 40%;
+    margin-right: -50%;
+}
+

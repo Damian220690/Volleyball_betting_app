@@ -19,7 +19,8 @@ public class UserAccountController {
     @PostMapping("/user/account")
     public String processUserAccount(@RequestParam double boost, HttpSession session){
         User user = (User) session.getAttribute("loggedInUser");
-        double userCash = user.getCash() + boost;
+        double increasedCash = user.getCash() + boost;
+        user.setCash(increasedCash);
         session.setAttribute("loggedInUser", user);
         return "redirect:/teamsTable";
     }

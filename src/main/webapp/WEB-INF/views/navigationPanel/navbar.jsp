@@ -16,6 +16,7 @@
             <li class="active"><a href="http://localhost:8080/teamsTable">Tabela ligi</a></li>
             <li class="active"><a href="http://localhost:8080/user/coupons">Kupony</a></li>
             <li class="active"><a href="http://localhost:8080/matches">Wybierz mecze</a></li>
+            <li class="active"><a href="http://localhost:8080/user/account">Recharge account</a></li>
             <div id="userDiv" style="display: flex; align-items:center; padding-left: 300px">
                 <div>
                 <i class="fas fa-user fa-3x" style="color: white"></i>
