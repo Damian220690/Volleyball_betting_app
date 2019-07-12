@@ -18,9 +18,9 @@
         <thead>
         <tr>
             <th scope="col" class="text-center">&nbsp</th>
-            <th scope="col" class="text-center">Numer kuponu</th>
-            <th scope="col" class="text-center">Wkład</th>
-            <th scope="col" class="text-center">Wygrana</th>
+            <th scope="col" class="text-center">Coupon number</th>
+            <th scope="col" class="text-center">Deposit</th>
+            <th scope="col" class="text-center">Prize</th>
             <th scope="col" class="text-center">&nbsp</th>
         </tr>
         </thead>
@@ -33,7 +33,7 @@
                 <td class="text-center">${coupon.deposit}</td>
                 <td class="text-center" id="win${coupon.couponsNumber}">${coupon.possibleWin}</td>
                 <td class="text-center">
-                    <a href="http://localhost:8080/user/coupons/${coupon.couponsNumber}">Szczegóły</a>
+                    <a href="http://localhost:8080/user/coupons/${coupon.couponsNumber}">Details</a>
                 </td>
             </tr>
         </c:forEach>

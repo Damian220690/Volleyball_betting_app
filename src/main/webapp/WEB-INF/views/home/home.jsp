@@ -14,15 +14,14 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="#">PrivBet</a>
         </div>
-        <button class="btn btn-danger navbar-btn" onclick="location.href='user/register'">Rejestracja</button>
-        <button class="btn btn-danger navbar-btn" onclick="location.href='user/login'">Zaloguj</button>
+        <button class="btn btn-danger navbar-btn" onclick="location.href='user/register'">Registration</button>
+        <button class="btn btn-danger navbar-btn" onclick="location.href='user/login'">Login</button>
     </div>
 </nav>
 <div class="container">
     <img class="rounded mx-auto d-block" id="logo" src="../static/images/logo.png">
-    <div class="center-block"><p class="betDetails">Aplikacja pozwala na zawieranie bezpłatnych, wirtualnych zakładów bukmacherskich na
-        mecze siatkówki plażowej.</p>
-        <p class="betDetails">Liga jak i zespoły biorące w niej udział są fikcyjne, a wyniki generowane są w sposób losowy.</p>
+    <div class="center-block"><p class="betDetails">This application allows users to make a bookmakers bet on beach volleyball matches which are virtual and free of charge.</p>
+        <p class="betDetails"> This virtual volleyball league includes only fictitious teams.</p>
     </div>
 </div>
 

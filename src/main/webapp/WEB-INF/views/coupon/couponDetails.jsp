@@ -13,14 +13,14 @@
 <body id="couponDetails">
 <%@ include file="../navigationPanel/navbar.jsp" %>
 <div>
-    <h2 id="selectedMatchesHeader">Wybrane mecze:</h2>
+    <h2 id="selectedMatchesHeader">Selected matches:</h2>
     <table class="table .table-sm" id="couponMatchList">
         <thead>
         <tr>
             <th scope="col" class="text-center">&nbsp</th>
-            <th scope="col" class="text-center">mecz</th>
-            <th scope="col" class="text-center">wynik</th>
-            <th scope="col" class="text-center">wybór</th>
+            <th scope="col" class="text-center">Match</th>
+            <th scope="col" class="text-center">Result</th>
+            <th scope="col" class="text-center">Choice</th>
         </tr>
         </thead>
         <tbody>
@@ -37,9 +37,9 @@
         </tbody>
     </table>
 </div>
-<p><span class="detailsParagraph">Kurs: </span><span id="fullCourse">${fullCourse}</span></p>
-<p><span class="detailsParagraph">Wkład: </span><span id="depositField">${couponDeposit}</span></p>
-<p><span class="detailsParagraph">Wygrana: </span><span id="possibleWinField">${possibleWin}</span></p>
+<p><span class="detailsParagraph">Rate: </span><span id="fullCourse">${fullCourse}</span></p>
+<p><span class="detailsParagraph">Deposit: </span><span id="depositField">${couponDeposit}</span></p>
+<p><span class="detailsParagraph">Possible win: </span><span id="possibleWinField">${possibleWin}</span></p>
 <p id="backParagraph"><a href="http://localhost:8080/user/coupons" id="backButton">Powrót</a></p>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

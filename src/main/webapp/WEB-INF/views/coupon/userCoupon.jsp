@@ -18,13 +18,13 @@
 <%@ include file="../navigationPanel/navbar.jsp" %>
 <div>
     <form method="post">
-        <h2 id="selectedMatchesHeader">Wybrane mecze:</h2>
+        <h2 id="selectedMatchesHeader">Selected matches:</h2>
         <table class="table .table-sm" id="couponMatchList">
             <thead>
             <tr>
-                <th scope="col" class="text-center">mecz</th>
-                <th scope="col" class="text-center">kurs</th>
-                <th scope="col" class="text-center">wybór</th>
+                <th scope="col" class="text-center">Match</th>
+                <th scope="col" class="text-center">Course</th>
+                <th scope="col" class="text-center">Choice</th>
                 <th scope="col" class="text-center"><button id="cleaningButton" onclick="location.href='http://localhost:8080/coupon/deleteAll'"
                                                             data-toggle="tooltip" title="Remove all bets" >
                 <i class="fas fa-trash-alt fa-1x"></i></button></th>
@@ -37,22 +37,23 @@
                                readonly="readonly" style="background-color: #9999ff"></td>
                     <td class="course">${selectedMatch.singleCourse}</td>
                     <td>${selectedMatch.choice}</td>
-                    <td><a id="deleteButton" href="http://localhost:8080/coupon/delete/${selectedMatch.id}">Usuń</a>
+                    <td><a id="deleteButton" href="http://localhost:8080/coupon/delete/${selectedMatch.id}">Remove</a>
                     </td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
 
-        <p id="course">Kurs całkowity: <span id="fullCourse">${fullCourse}</span></p>
-        <label id="depositLabel"for="deposit">Stawka</label>
+        <p id="course">Total rate: <span id="fullCourse">${fullCourse}</span></p>
+        <label id="depositLabel"for="deposit">Deposit</label>
         <input type="number" min="2" step=".01" id="deposit" name="deposit" required>
-        <input type="submit" id="confirmButton" value="Postaw">
-        <p id="prize">Do wygrania: <input id="possibleWin" name="possibleWin" readonly="readonly"/></p>
-        <p id="backParagraph"><a href="http://localhost:8080/matches" id="backButton">Powrót do wyboru meczy</a></p>
+        <input type="submit" id="confirmButton" value="Confirm">
+        <p id="prize">Price: <input id="possibleWin" name="possibleWin" readonly="readonly"/></p>
+        <p id="backParagraph"><a href="http://localhost:8080/matches" id="backButton">
+            Return to the selection of matches</a></p>
         <footer class="footer">
             <p>
-                <label for="couponNum">Numer kuponu:</label>
+                <label for="couponNum">Coupon number:</label>
                 <input name="couponNumber" id="couponNum" type="text" value="${couponNumber}" readonly="readonly">
             </p>
         </footer>

@@ -15,7 +15,7 @@
 <body id="couponCreator">
 <%@ include file="../navigationPanel/navbar.jsp" %>
 <div class="roundsDiv">
-    <h2 id="couponMatchesHeader">Wybierz mecze:</h2>
+    <h2 id="couponMatchesHeader">Selet matches::</h2>
     <c:forEach var="round" items="${rounds}">
         <h4 class="roundCounter" data-toggle="tooltip"><span class="roundSpan"
                                                              id="roundSpan${round.roundNumber}">Round ${round.roundNumber}</span>
@@ -24,7 +24,7 @@
             <table class="table .table-sm" id="matchesTable">
                 <thead>
                 <tr>
-                    <th scope="col" class="text-center">mecz</th>
+                    <th scope="col" class="text-center">Match</th>
                     <th scope="col" class="text-center">&nbsp</th>
                 </tr>
                 </thead>
@@ -34,7 +34,7 @@
                 <tr>
                     <td class="text-center" data-match="${match}" data-status=" ">${match}</td>
                     <td class="text-center">
-                        <button class="open" id="selectionButton">Wybierz</button>
+                        <button class="open" id="selectionButton">Select</button>
                     </td>
                 </tr>
                 <tr class="t">

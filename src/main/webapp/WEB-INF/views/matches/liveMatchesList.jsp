@@ -15,16 +15,16 @@
 <body id="resultsSchedule">
 <div>
     <%@ include file="../navigationPanel/navbar.jsp" %>
-    <h2 id="resultHeader">Wyniki</h2>
+    <h2 id="resultHeader">Results</h2>
     <% int count =1;%>
     <c:forEach var="rounds" items="${rounds}">
         <table class="table .table-sm" id="schedule">
 
             <thead>
-            <tr id="roundCounter"><span id="counter">Runda ${rounds.roundNumber}:</span></tr>
+            <tr id="roundCounter"><span id="counter">Round ${rounds.roundNumber}:</span></tr>
             <tr>
-                <th scope="col" class="text-center">Mecz</th>
-                <th scope="col" class="text-center">Wynik</th>
+                <th scope="col" class="text-center">Match</th>
+                <th scope="col" class="text-center">Result</th>
             </tr>
             </thead>
 

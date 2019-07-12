@@ -14,15 +14,15 @@
 <body id="leagueTable">
 <%@ include file="../navigationPanel/navbar.jsp" %>
 <div>
-    <h2 id="leagueHeader">Tabela ligi</h2>
+    <h2 id="leagueHeader">League table</h2>
     <table class="table .table-sm" id="teamTable">
         <thead>
         <tr>
-            <th scope="col" class="text-center">miejsce</th>
-            <th scope="col" class="text-center">drużyna</th>
-            <th scope="col" class="text-center">mecze</th>
-            <th scope="col" class="text-center">punkty</th>
-            <th scope="col" class="text-center">sety</th>
+            <th scope="col" class="text-center">&nbsp</th>
+            <th scope="col" class="text-center">Team</th>
+            <th scope="col" class="text-center">Number of matches</th>
+            <th scope="col" class="text-center">Points</th>
+            <th scope="col" class="text-center">Sets</th>
         </tr>
         </thead>
         <tbody>

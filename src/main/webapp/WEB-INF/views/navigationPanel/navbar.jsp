@@ -12,10 +12,10 @@
             <a class="navbar-brand" href="/privBet">PrivBet</a>
         </div>
         <ul class="nav navbar-nav m4-auto">
-            <li class="active"><a href="http://localhost:8080/schedule">Rozgrywki</a></li>
-            <li class="active"><a href="http://localhost:8080/teamsTable">Tabela ligi</a></li>
-            <li class="active"><a href="http://localhost:8080/user/coupons">Kupony</a></li>
-            <li class="active"><a href="http://localhost:8080/matches">Wybierz mecze</a></li>
+            <li class="active"><a href="http://localhost:8080/schedule">Competition</a></li>
+            <li class="active"><a href="http://localhost:8080/teamsTable">League table</a></li>
+            <li class="active"><a href="http://localhost:8080/user/coupons">My coupons</a></li>
+            <li class="active"><a href="http://localhost:8080/matches">Select matches</a></li>
             <li class="active"><a href="http://localhost:8080/user/account">Recharge account</a></li>
             <div id="userDiv" style="display: flex; align-items:center; padding-left: 300px">
                 <div>
@@ -27,7 +27,7 @@
             </div>
         </ul>
 
-        <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'" id="couponButton">Kupon</button>
+        <button class="btn btn-danger navbar-btn" onclick="location.href='/coupon'" id="couponButton">Coupon</button>
         <button class="btn btn-danger navbar-btn " onclick="location.href='/privBet'" id="logoutButton">Logout</button>
     </div>
 </nav>
